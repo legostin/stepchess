@@ -1,0 +1,1165 @@
+{
+  "format": 1,
+  "nodes": 50000,
+  "languages": [
+    "ru",
+    "en"
+  ],
+  "tables": [
+    "KBBK",
+    "KBNK",
+    "KNNK",
+    "KPK",
+    "KQK",
+    "KQKB",
+    "KQKN",
+    "KQKP",
+    "KQKQ",
+    "KQKR",
+    "KRK",
+    "KRKB",
+    "KRKR"
+  ],
+  "records": [
+    {
+      "id": "open-01",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "move": "e4",
+      "summary": {
+        "analyze": "c4 +12 cp (White's view), depth 10",
+        "explain": "e4 is best, loses 0.0% win chance, best c4; motif none; \"e4 is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "dcd7b5898a9a200aa145795118b6723ea51b469d5d0fa8d63f6b79def7a62799",
+          "en": "dcd7b5898a9a200aa145795118b6723ea51b469d5d0fa8d63f6b79def7a62799"
+        },
+        "explain": {
+          "ru": "098fac5f41f7998ecac518863f13d6ca51298fab0906f4a9496ae6b240994f0d",
+          "en": "c51a49a413a79b20d94664014823bb5c3a072009043d26e1743ba3629ee3690f"
+        }
+      }
+    },
+    {
+      "id": "open-02",
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "move": "d4",
+      "summary": {
+        "analyze": "c4 +12 cp (White's view), depth 10",
+        "explain": "d4 is best, loses 0.0% win chance, best c4; motif none; \"d4 is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "dcd7b5898a9a200aa145795118b6723ea51b469d5d0fa8d63f6b79def7a62799",
+          "en": "dcd7b5898a9a200aa145795118b6723ea51b469d5d0fa8d63f6b79def7a62799"
+        },
+        "explain": {
+          "ru": "2e44c57346c9e931500f0b8f2f9b74eaf08193dddf8061400719b7db3b5a90a5",
+          "en": "2995e7bd03bc2c9b6dec27f3650c8a4851e8d3b461904077b7d3ea9899d03ad8"
+        }
+      }
+    },
+    {
+      "id": "open-03",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "move": "Nf3",
+      "summary": {
+        "analyze": "Nf3 +42 cp (White's view), depth 9",
+        "explain": "Nf3 is best, loses 0.0% win chance, best Nf3; motif none; \"Nf3 is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "568885dcf0aeda92639d3fce34ba8cb49adf2a8aa60c0c9ab927a28e8a509fa4",
+          "en": "568885dcf0aeda92639d3fce34ba8cb49adf2a8aa60c0c9ab927a28e8a509fa4"
+        },
+        "explain": {
+          "ru": "160872cbaaf54790d9e40ce4105df3cbf5d285f6494225ca41736fb5b652be8e",
+          "en": "5b5b01ae544727c31d13a2fa7fafd5e0110528691cb3a3a1e513b36b30a82f38"
+        }
+      }
+    },
+    {
+      "id": "open-04",
+      "fen": "rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+      "move": "Be3",
+      "summary": {
+        "analyze": "Bd3 +49 cp (White's view), depth 9",
+        "explain": "Be3 is good, loses 3.1% win chance, best Bd3; motif none; \"Be3 is a good move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "61f69f50fa05efd93408b9c8cfbc035c45e7a7537b646276cb5275fd3719af5b",
+          "en": "61f69f50fa05efd93408b9c8cfbc035c45e7a7537b646276cb5275fd3719af5b"
+        },
+        "explain": {
+          "ru": "11500b16d6979e4bd5bc2d64f91d26888371d0e77d603432c6695b9cd495521c",
+          "en": "16d120eb18fbe83f78b81a7c63863c9e88c778e0c30877a643907c55e8ea5a96"
+        }
+      }
+    },
+    {
+      "id": "open-05",
+      "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4",
+      "move": "Bg5",
+      "summary": {
+        "analyze": "cxd5 +12 cp (White's view), depth 8",
+        "explain": "Bg5 is good, loses 2.4% win chance, best cxd5; motif pin-relative; \"Bg5 is a good move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "0b79728bd78596d247149c235e3e666b6bd7e6e0a1e20c1007669f3cb5d56756",
+          "en": "0b79728bd78596d247149c235e3e666b6bd7e6e0a1e20c1007669f3cb5d56756"
+        },
+        "explain": {
+          "ru": "657fc0969b9bddabf13e243bb8f7e56974ea8b33386b0adbc9c8c53d47b0e598",
+          "en": "f9a566dff8d62ef003745d8b6c6644f8b3844e00018cddf54e6f57b5d4396dc2"
+        }
+      }
+    },
+    {
+      "id": "open-06",
+      "fen": "r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 5",
+      "move": "O-O",
+      "summary": {
+        "analyze": "O-O -10 cp (White's view), depth 9",
+        "explain": "O-O is best, loses 0.0% win chance, best O-O; motif none; \"O-O is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "2da9a9d3b975b0c22d68c0ad6439f3be946f338a226fac537aa8c1315d1e6b73",
+          "en": "2da9a9d3b975b0c22d68c0ad6439f3be946f338a226fac537aa8c1315d1e6b73"
+        },
+        "explain": {
+          "ru": "e12d0baa2774548ba14441e40868febf36271182375f425bfabf34becba2734b",
+          "en": "2ab194dc2b463abe367a704fc905eba117aa46f8966348089ee496ef98d2209e"
+        }
+      }
+    },
+    {
+      "id": "open-07",
+      "fen": "rnbqk1nr/ppp2ppp/4p3/3p4/1b1PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4",
+      "move": "e5",
+      "summary": {
+        "analyze": "exd5 +19 cp (White's view), depth 9",
+        "explain": "e5 is good, loses 1.9% win chance, best exd5; motif hanging-piece; \"e5 is a good move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "7949938875e5600d4bfc700c5519833e16d0be26c8b994099c485bec3e157949",
+          "en": "7949938875e5600d4bfc700c5519833e16d0be26c8b994099c485bec3e157949"
+        },
+        "explain": {
+          "ru": "5e1156d7ae9c3e9117303443ff752b80e44a4606a698cd5cc2771dd5741d297f",
+          "en": "dc57d702a9be3c1bfe8874048cb6fb6b6ee10f4faa74e718198f7238b24a45c4"
+        }
+      }
+    },
+    {
+      "id": "open-08",
+      "fen": "rnbqk2r/ppppppbp/5np1/8/2P5/2N2N2/PP1PPPPP/R1BQKB1R w KQkq - 2 4",
+      "move": "e4",
+      "summary": {
+        "analyze": "d4 +18 cp (White's view), depth 10",
+        "explain": "e4 is good, loses 3.5% win chance, best d4; motif discovered-attack; \"e4 is a good move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "17beec46dda538ebe20af2ea5d35c5d1ae1fa5553a8ecf8469b00fe3dc5dd1ab",
+          "en": "17beec46dda538ebe20af2ea5d35c5d1ae1fa5553a8ecf8469b00fe3dc5dd1ab"
+        },
+        "explain": {
+          "ru": "6b4e4fc0999736559d82dd7b8ee33ca75e2c403d5eb7f980b11c34ed062abae8",
+          "en": "021dfbce8c98a943e82336a2df4f6787c5160b3f312714f0ad4504732849dd81"
+        }
+      }
+    },
+    {
+      "id": "open-09",
+      "fen": "rnbq1rk1/ppp2ppp/4pn2/3p4/1bPP4/2NBP3/PP3PPP/R1BQK1NR w KQ - 0 6",
+      "move": "Nf3",
+      "summary": {
+        "analyze": "Ne2 +34 cp (White's view), depth 10",
+        "explain": "Nf3 is best, loses 0.6% win chance, best Ne2; motif none; \"Nf3 is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "b538c79629cfd384ca411ac395382464e933b628efd95089f6ac758ce9ae5e26",
+          "en": "b538c79629cfd384ca411ac395382464e933b628efd95089f6ac758ce9ae5e26"
+        },
+        "explain": {
+          "ru": "7576602cfefaeb08cc340368ed021e3150ecf553d07eb520169c3f9ee7f01974",
+          "en": "404983c96020e63b55a0d926de3ca0bc4a7870103531a6a24dc1a36695dd11f4"
+        }
+      }
+    },
+    {
+      "id": "open-10",
+      "fen": "rn1qkbnr/pp2pppp/2p5/5b2/3PN3/8/PPP2PPP/R1BQKBNR w KQkq - 1 5",
+      "move": "Ng3",
+      "summary": {
+        "analyze": "Ng3 +73 cp (White's view), depth 10",
+        "explain": "Ng3 is best, loses 0.0% win chance, best Ng3; motif none; \"Ng3 is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "f40178e7c82c3e991512bbb7cb6bd2ae63f463d9973063514735dcba75c7220e",
+          "en": "f40178e7c82c3e991512bbb7cb6bd2ae63f463d9973063514735dcba75c7220e"
+        },
+        "explain": {
+          "ru": "84871459a85e778a197638611748420a1d2f778da76fed53fb4d717a840b87be",
+          "en": "9262b401c011fcdd13cc1e2b19ca78f5a5cfcca421bde5bb6092b3732dfe85fa"
+        }
+      }
+    },
+    {
+      "id": "tact-01",
+      "fen": "r1bq2rk/pp3pbp/2p1p1pQ/7P/3P4/2PB1N2/PP3PPR/2KR4 w - - 0 1",
+      "move": "Qxh7",
+      "summary": {
+        "analyze": "Qxh7+ mate +2 (White's view), depth 64",
+        "explain": "Qxh7+ is best, loses 0.0% win chance, best Qxh7+; motif decoy; \"Qxh7+ is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "da2e0dd947816302bc7aba2d0f75a7122e24404797fb232002d7264f3e2ec313",
+          "en": "da2e0dd947816302bc7aba2d0f75a7122e24404797fb232002d7264f3e2ec313"
+        },
+        "explain": {
+          "ru": "570720868665f179ce28bf193b905d3063027e4c95771bc75425f41db463e977",
+          "en": "104a8656b6d9f034646e8abe5d9667704400a3c24424be937f7d85a34771912c"
+        }
+      }
+    },
+    {
+      "id": "tact-02",
+      "fen": "5rk1/1b3p1p/pp3p2/3n1N2/1P6/P1qB1PP1/3Q3P/4R1K1 w - - 0 1",
+      "move": "Qh6",
+      "summary": {
+        "analyze": "Qh6 +604 cp (White's view), depth 11",
+        "explain": "Qh6 is best, loses 0.0% win chance, best Qh6; motif prophylaxis; \"Qh6 is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "5bb4e05cb904f497bc670d27f18397f36163fdb64fe15886662cc633f25ae1cf",
+          "en": "5bb4e05cb904f497bc670d27f18397f36163fdb64fe15886662cc633f25ae1cf"
+        },
+        "explain": {
+          "ru": "a7c9b494e15884cb0c65c9947a8e73efa415b5414c15f4732665814d40c70057",
+          "en": "8cd0d552ee060d499038c2ec72d251b5849761fa6a6729ce752cd52bb72ed0cd"
+        }
+      }
+    },
+    {
+      "id": "tact-03",
+      "fen": "3rb1k1/pq3pbp/4n1p1/3p4/2N5/2P2QB1/PP3PPP/1B1R2K1 b - - 0 1",
+      "move": "dxc4",
+      "summary": {
+        "analyze": "dxc4 -205 cp (White's view), depth 13",
+        "explain": "dxc4 is best, loses 0.0% win chance, best dxc4; motif hanging-piece; \"dxc4 is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "86978775fc6332013b63d2ac1ae644ccecb1c1403edd8ecb57c8fa760b3710b3",
+          "en": "86978775fc6332013b63d2ac1ae644ccecb1c1403edd8ecb57c8fa760b3710b3"
+        },
+        "explain": {
+          "ru": "cc0c17e35a43f8fe8cd8c8c7ab762b28e82831d1d8bb89907441a1f82dfd0e61",
+          "en": "cdb8fe21ccffdd2153f0c2e248b7096e8abdc9404297c470d448c814be502ebd"
+        }
+      }
+    },
+    {
+      "id": "tact-04",
+      "fen": "6r1/3Pn1qk/p1p1P1rp/2Q2p2/2P5/1P4P1/P3R2P/5RK1 b - - 0 1",
+      "move": "Rxg3",
+      "summary": {
+        "analyze": "Rxg3+ +53 cp (White's view), depth 11",
+        "explain": "Rxg3+ is best, loses 0.0% win chance, best Rxg3+; motif isolated-pawn; \"Rxg3+ is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "4298a960097794ebb5c5d65c40d912878eaee492f68360c7e8f9eee655ed7566",
+          "en": "4298a960097794ebb5c5d65c40d912878eaee492f68360c7e8f9eee655ed7566"
+        },
+        "explain": {
+          "ru": "67ed105b23dbe43fd9cf0e0613b2d4113c4c60455830a32063c783af16a79103",
+          "en": "f1fdfb72f60ed49af5d03a1663c5771699c35a3012ad5a90c76d8118fa5a92a2"
+        }
+      }
+    },
+    {
+      "id": "tact-05",
+      "fen": "r4rk1/p1B1bpp1/1p2pn1p/8/2PP4/3B1P2/qP2QP1P/3R1RK1 w - - 0 1",
+      "move": "Ra1",
+      "summary": {
+        "analyze": "d5 +67 cp (White's view), depth 10",
+        "explain": "Ra1 is best, loses 0.0% win chance, best d5; motif pin-relative; \"Ra1 is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "21cf0053eb33f91b07217dacba333494e3cfdf0557689f3ffb9a235f6beace20",
+          "en": "21cf0053eb33f91b07217dacba333494e3cfdf0557689f3ffb9a235f6beace20"
+        },
+        "explain": {
+          "ru": "831bc1b260c29ae473a0f38862c6e14ef960f2aad76a40d0266b11bd0bd87055",
+          "en": "0cf9bd8d9fa7e60a89e4e9ee6ef635c321bcaef0f1862cfb3b9ffb98f8de5131"
+        }
+      }
+    },
+    {
+      "id": "tact-06",
+      "fen": "1r3rk1/5pb1/p2p2p1/Q1n1q2p/1NP1P3/3p1P1B/PP1R3P/1K2R3 b - - 0 1",
+      "move": "Nxe4",
+      "summary": {
+        "analyze": "Nxe4 -649 cp (White's view), depth 12",
+        "explain": "Nxe4 is best, loses 0.0% win chance, best Nxe4; motif discovered-attack; \"Nxe4 is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "489af1986be3054a40a20387e2a86f256f69af6b4dfb1b10e9d513cb75695985",
+          "en": "489af1986be3054a40a20387e2a86f256f69af6b4dfb1b10e9d513cb75695985"
+        },
+        "explain": {
+          "ru": "ddad245efffcf79dd7725a951d766aef8c1f8d8f5f7224bf356e10b8a4c684d4",
+          "en": "ab86103ebeb0974519ca76f49ed1222dd90abd80c8d824754e3fe9b26968723d"
+        }
+      }
+    },
+    {
+      "id": "tact-07",
+      "fen": "3r1rk1/q4ppp/p1Rnp3/8/1p6/1N3P2/PP3QPP/3R2K1 b - - 0 1",
+      "move": "Ne4",
+      "summary": {
+        "analyze": "Ne4 -832 cp (White's view), depth 12",
+        "explain": "Ne4 is best, loses 0.0% win chance, best Ne4; motif back-rank-weakness; \"Ne4 is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "ed0621341300e8506bbcfcd570de0a96c239969a9d914e6fc83d608c746bedf0",
+          "en": "ed0621341300e8506bbcfcd570de0a96c239969a9d914e6fc83d608c746bedf0"
+        },
+        "explain": {
+          "ru": "0f5421e9c70ca19ccb1240c868c56325ad7d62da69203223fb8f2206389fea69",
+          "en": "c56c0c568b98e4d26da7b6b4bad1d4968c85ea2f80f3886dffbcae2bacb065cd"
+        }
+      }
+    },
+    {
+      "id": "tact-08",
+      "fen": "3b1rk1/1bq3pp/5pn1/1p2rN2/2p1p3/2P1B2Q/1PB2PPP/R2R2K1 w - - 0 1",
+      "move": "Rd7",
+      "summary": {
+        "analyze": "Rd7 +452 cp (White's view), depth 11",
+        "explain": "Rd7 is best, loses 0.0% win chance, best Rd7; motif decoy; \"Rd7 is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "27c5c2cc590c985db832a0a4353825e62feb7b81a4da9aa202f7b8d815d1fa2e",
+          "en": "27c5c2cc590c985db832a0a4353825e62feb7b81a4da9aa202f7b8d815d1fa2e"
+        },
+        "explain": {
+          "ru": "b45939c149a9acd14d6debca9042b15bef4ee8044a555d5ee6fdc70279ad0b72",
+          "en": "30f312bd0b1f516334747c6e4c181a90b527ffc72e89c5eb865ef90e079cc715"
+        }
+      }
+    },
+    {
+      "id": "tact-09",
+      "fen": "5rk1/n1p1R1bp/p2p4/1qpP1QB1/7P/2P3P1/PP3P2/6K1 w - - 0 1",
+      "move": "Rxg7",
+      "summary": {
+        "analyze": "Rxg7+ mate +3 (White's view), depth 27",
+        "explain": "Rxg7+ is best, loses 0.0% win chance, best Rxg7+; motif decoy; \"Rxg7+ is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "49f84a027391748f8ed9d8fe1c0c66deb468b3b6d863abd1be8a046ae2c51401",
+          "en": "49f84a027391748f8ed9d8fe1c0c66deb468b3b6d863abd1be8a046ae2c51401"
+        },
+        "explain": {
+          "ru": "6540cbbd92e8d815eca359325c0547da5a55117655ae68befd61928e510f0c5a",
+          "en": "0ab6e37b7712a98d358da735daf7cd6bae2e1f93d4ea2fe388038a7bb2521d77"
+        }
+      }
+    },
+    {
+      "id": "tact-10",
+      "fen": "r5k1/pppb3p/2np1n2/8/3PqNpP/3Q2P1/PPP5/R4RK1 w - - 0 1",
+      "move": "Nh5",
+      "summary": {
+        "analyze": "Nh5 +185 cp (White's view), depth 12",
+        "explain": "Nh5 is best, loses 0.0% win chance, best Nh5; motif discovered-attack; \"Nh5 is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "9fcd6837bbd157bc434eddf355adc97193bc39b4a4be3b4c0aea632941173e82",
+          "en": "9fcd6837bbd157bc434eddf355adc97193bc39b4a4be3b4c0aea632941173e82"
+        },
+        "explain": {
+          "ru": "d42e8ae6468893de63e700ef9dfe3d2c7ef66f03de0d1d97674a2460ed473e92",
+          "en": "b6a2a8d5bf0188bc57319ba5626a49ecd7b9984f30099fa6775cc67968be0e10"
+        }
+      }
+    },
+    {
+      "id": "tact-11",
+      "fen": "r3k3/ppp2Npp/4Bn2/2b5/1n1pp3/N4P2/PPP3qP/R2QKR2 b Qq - 0 1",
+      "move": "Nd3",
+      "summary": {
+        "analyze": "Nd3+ -800 cp (White's view), depth 11",
+        "explain": "Nd3+ is best, loses 0.0% win chance, best Nd3+; motif decoy; \"Nd3+ is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "7f787a7a3e1ed56de1ae914728f75bee77c7cd5683e4e78925318ba949350700",
+          "en": "7f787a7a3e1ed56de1ae914728f75bee77c7cd5683e4e78925318ba949350700"
+        },
+        "explain": {
+          "ru": "7c3be1c7e46b9ea96124c2a897df8cd9013b8dfabe0dd5a19379643c8ae1352e",
+          "en": "b82a5fbd942aae854eef57aa9fad1d6e08f1f366929dc14bc4159b768e824927"
+        }
+      }
+    },
+    {
+      "id": "tact-12",
+      "fen": "3r1rk1/pp1q1ppp/3pn3/2pN4/5PP1/P5PQ/1PP1B3/1K1R4 w - - 0 1",
+      "move": "Rh1",
+      "summary": {
+        "analyze": "Bb5 +162 cp (White's view), depth 11",
+        "explain": "Rh1 is best, loses 0.0% win chance, best Bb5; motif fork; \"Rh1 is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "b28366faaa5f77fe0c36445c8ac99954a2b49947cfe131275b9217704cb5e50b",
+          "en": "b28366faaa5f77fe0c36445c8ac99954a2b49947cfe131275b9217704cb5e50b"
+        },
+        "explain": {
+          "ru": "f6bf76c992603723250525add29117afbf7ee2b23a4bc3b87d548ce9620a7717",
+          "en": "d34d96148b22fa35a79c9cbe076c05083c670b9cd5d2e7fbb0aebb634c2091af"
+        }
+      }
+    },
+    {
+      "id": "tact-13",
+      "fen": "2b5/1r6/2kBp1p1/p2pP1P1/2pP4/1pP3K1/1R3P2/8 b - - 0 1",
+      "move": "Rb4",
+      "summary": {
+        "analyze": "Rf7 -345 cp (White's view), depth 13",
+        "explain": "Rb4 is mistake, loses 16.0% win chance, best Rf7; motif promotion; \"Rb4 is a mistake\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "89e4723a943ea4a3eba9103b5d1062349c80ee438064c40284edb9d59e8d0c0c",
+          "en": "89e4723a943ea4a3eba9103b5d1062349c80ee438064c40284edb9d59e8d0c0c"
+        },
+        "explain": {
+          "ru": "46ef248be2db12beb9c37face01f3a635b7e97382cc010991a525f16aa50c361",
+          "en": "5d18a4ef8c82f13f606b57ed5bbd96a325956d7acce33cc9d8da8a726a75a3fa"
+        }
+      }
+    },
+    {
+      "id": "tact-14",
+      "fen": "1b5k/7P/p1p2np1/2P2p2/PP3P2/4RQ1R/q2r3P/6K1 w - - 0 1",
+      "move": "Re8",
+      "summary": {
+        "analyze": "Re8+ mate +8 (White's view), depth 13",
+        "explain": "Re8+ is best, loses 0.0% win chance, best Re8+; motif clearance; \"Re8+ is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "b6392ec406db08654778f347c447ec58a1689d6528e8ce179c6f3ae54e623664",
+          "en": "b6392ec406db08654778f347c447ec58a1689d6528e8ce179c6f3ae54e623664"
+        },
+        "explain": {
+          "ru": "4e6bf5f7e7b2ace865044d56c78736afecd0efc37adf27307cd069db2d38ee4a",
+          "en": "2105f0a6b50239ce0be27ec17ae6f70b15450df80b944f97189df487ce7fd9a8"
+        }
+      }
+    },
+    {
+      "id": "tact-15",
+      "fen": "2r1r1k1/pp1q1ppp/3p1b2/3P4/3Q4/5N2/PP2RPPP/4R1K1 w - - 0 1",
+      "move": "Qg4",
+      "summary": {
+        "analyze": "Rxe8+ +38 cp (White's view), depth 11",
+        "explain": "Qg4 is best, loses 0.0% win chance, best Rxe8+; motif clearance; \"Qg4 is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "f78658977975ed9521c8cdc3bb1e3e3d679941465da15070655050c7c8fe128c",
+          "en": "f78658977975ed9521c8cdc3bb1e3e3d679941465da15070655050c7c8fe128c"
+        },
+        "explain": {
+          "ru": "cd9eb1be73c586bdbb651925544a5e02c2054937b4d6d3557bc949601388642b",
+          "en": "a9ffbcf3e9905d049b58c181a239f2ba4450742aac385756079da6005d7eb228"
+        }
+      }
+    },
+    {
+      "id": "quiet-01",
+      "fen": "r1bq1rk1/2pnbppp/p2p1n2/1p2p3/3PP3/1BP2N1P/PP3PP1/RNBQR1K1 w - - 1 11",
+      "move": "c4",
+      "summary": {
+        "analyze": "Bg5 +12 cp (White's view), depth 8",
+        "explain": "c4 is good, loses 2.0% win chance, best Bg5; motif pawn-break; \"c4 is a good move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "bc201740c5bf7bb1e0b8e2faea0e3fb4d9e0d19eaeb5a5629460d860b5b965dd",
+          "en": "bc201740c5bf7bb1e0b8e2faea0e3fb4d9e0d19eaeb5a5629460d860b5b965dd"
+        },
+        "explain": {
+          "ru": "9f97737fda3f5fe20b335e056d587a8ff3d21ed775b9d4a4ed895047a919289c",
+          "en": "b06316a9b0e26d45965d637e0acf0c1a1021962b28ddc108bd6e077b038326d4"
+        }
+      }
+    },
+    {
+      "id": "quiet-02",
+      "fen": "rnb2rk1/p1p1qpp1/1p5p/3p4/3P4/4PN2/PP3PPP/R2QKB1R w KQ - 0 11",
+      "move": "Rc1",
+      "summary": {
+        "analyze": "Rc1 +37 cp (White's view), depth 9",
+        "explain": "Rc1 is best, loses 0.0% win chance, best Rc1; motif none; \"Rc1 is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "b4fff8b60e64af0ccd0e4db1a55011cb1476d2f2e39d4223bd89c09c0d67262a",
+          "en": "b4fff8b60e64af0ccd0e4db1a55011cb1476d2f2e39d4223bd89c09c0d67262a"
+        },
+        "explain": {
+          "ru": "e4744022bf69430ffff7212207b409955f2733eb7047c6a32ba58db9cc8ef46d",
+          "en": "845fe0f6e5dfdaaccf943c9ed12f2274bf642dfeae8510ddf855f03f9380eccd"
+        }
+      }
+    },
+    {
+      "id": "quiet-03",
+      "fen": "r2qk2r/pp1n1ppp/2p1pn2/5b2/PbBP4/2N1PN2/1P3PPP/R1BQ1RK1 w kq - 3 9",
+      "move": "Qe2",
+      "summary": {
+        "analyze": "Nh4 +51 cp (White's view), depth 9",
+        "explain": "Qe2 is good, loses 1.8% win chance, best Nh4; motif none; \"Qe2 is a good move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "52869f93912900cc418d5b3ddf8841c251df1631a64ad3d09ba736acaff9c0d1",
+          "en": "52869f93912900cc418d5b3ddf8841c251df1631a64ad3d09ba736acaff9c0d1"
+        },
+        "explain": {
+          "ru": "937c9cc93fabd244dbce8e9ea931c539a0d2e75c3fc63f6dd09d9170d499b5ed",
+          "en": "90728508d3cb10fea85de3b1706c371317f4e65ae28ebd7e6322d30c3490edeb"
+        }
+      }
+    },
+    {
+      "id": "quiet-04",
+      "fen": "r1bq1rk1/pppnnpbp/3p2p1/3Pp3/2P1P3/2N5/PP2BPPP/R1BQNRK1 w - - 3 10",
+      "move": "Be3",
+      "summary": {
+        "analyze": "Nd3 +34 cp (White's view), depth 9",
+        "explain": "Be3 is good, loses 1.8% win chance, best Nd3; motif none; \"Be3 is a good move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "756c43bb50596665a20b3ed4d79bd3297a01124b982b6803be63817f89d7afce",
+          "en": "756c43bb50596665a20b3ed4d79bd3297a01124b982b6803be63817f89d7afce"
+        },
+        "explain": {
+          "ru": "9337615f019a4f5dce9e37edd42dd97fdb2607d31c0d026a31a6133653821d4c",
+          "en": "d7f7fea20761c2ee9f9495959ee482d3f069666100fbc4ab1fb4a00b9ae49d9c"
+        }
+      }
+    },
+    {
+      "id": "quiet-05",
+      "fen": "r2qkb1r/pp1nnppp/4p3/2ppPb2/3P4/2P1BN2/PP2BPPP/RN1Q1RK1 b kq - 0 8",
+      "move": "Nc6",
+      "summary": {
+        "analyze": "Ng6 +19 cp (White's view), depth 8",
+        "explain": "Nc6 is best, loses 0.0% win chance, best Ng6; motif prophylaxis; \"Nc6 is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "9246428e759ef0db2eb41b649f4987e7f2dc74892cb981b4759d129db961f939",
+          "en": "9246428e759ef0db2eb41b649f4987e7f2dc74892cb981b4759d129db961f939"
+        },
+        "explain": {
+          "ru": "ed691d36801d4d85d7afe3b55cdc7bab73f1d79f18d73f7c98e85aeaaf7a6ffa",
+          "en": "c632a17264c4f9cfcf868e25d396cecc7fa6cd95bcf01ffb1d71555a250ad581"
+        }
+      }
+    },
+    {
+      "id": "quiet-06",
+      "fen": "r1bq1rk1/ppp1bppp/1nn5/4p3/8/2NP1NP1/PP2PPBP/R1BQ1RK1 w - - 1 9",
+      "move": "a3",
+      "summary": {
+        "analyze": "Bd2 +9 cp (White's view), depth 10",
+        "explain": "a3 is best, loses 0.5% win chance, best Bd2; motif none; \"a3 is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "4014eaa1507492bbc4684b1363aa7edd6473bd74446b04917ed874477f94d147",
+          "en": "4014eaa1507492bbc4684b1363aa7edd6473bd74446b04917ed874477f94d147"
+        },
+        "explain": {
+          "ru": "b6f099d4450a5ec9a957c954c6fd539904a45805fa11f997b482c75480cebd23",
+          "en": "69f6128a2e607cc0c9ea5ebce90b5def159d133e9b2cbd9a26b17b247c131f88"
+        }
+      }
+    },
+    {
+      "id": "quiet-07",
+      "fen": "r1bqk2r/pp4pp/2nbpn2/3p4/3P4/3B4/PP1NNPPP/R1BQ1RK1 w kq - 2 11",
+      "move": "Nf3",
+      "summary": {
+        "analyze": "Nf3 -2 cp (White's view), depth 10",
+        "explain": "Nf3 is best, loses 0.0% win chance, best Nf3; motif none; \"Nf3 is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "39c246bc7476433d4a64c99db5f221b17379e4e4c56ed3938fa3d16304b204e1",
+          "en": "39c246bc7476433d4a64c99db5f221b17379e4e4c56ed3938fa3d16304b204e1"
+        },
+        "explain": {
+          "ru": "95fc844bcae293ed5a1fa662f83bbe38c322e8576a8d999f6ece1862abe8a6f1",
+          "en": "e86a17b4a021baeff03759ae05548252bb30fdf765fb0278a065796c818e2d1c"
+        }
+      }
+    },
+    {
+      "id": "quiet-08",
+      "fen": "r1b2rk1/ppq2ppp/2n1pn2/2p5/2BP4/P1P1PN2/5PPP/R1BQ1RK1 w - - 1 11",
+      "move": "Bd3",
+      "summary": {
+        "analyze": "Rb1 +38 cp (White's view), depth 9",
+        "explain": "Bd3 is best, loses 0.9% win chance, best Rb1; motif none; \"Bd3 is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "bf0e62cded1c0917e7b9b54c9b70927d71479965dbd6007b47e9c2b3f9ede939",
+          "en": "bf0e62cded1c0917e7b9b54c9b70927d71479965dbd6007b47e9c2b3f9ede939"
+        },
+        "explain": {
+          "ru": "784cd992636880397653d41a6cb45a16f187db0703b5dea98b31a612a68740db",
+          "en": "25ca6746600f9cb2571bf40bd402f83a2ee6f1c96a02c81c6fa05ff2018f7772"
+        }
+      }
+    },
+    {
+      "id": "quiet-09",
+      "fen": "r2q1rk1/bpp2ppp/p1npbn2/4p3/4P3/1BPP1N2/PP1N1PPP/R1BQR1K1 w - - 4 10",
+      "move": "h3",
+      "summary": {
+        "analyze": "Bxe6 +16 cp (White's view), depth 10",
+        "explain": "h3 is best, loses 0.8% win chance, best Bxe6; motif prophylaxis; \"h3 is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "7516aba15c8c5ab7f19b9049dcdf63336c3da16e143a5c0192a1f1febffd0b04",
+          "en": "7516aba15c8c5ab7f19b9049dcdf63336c3da16e143a5c0192a1f1febffd0b04"
+        },
+        "explain": {
+          "ru": "08e9fc6c41b7782f7e6526fd9a74b80eecc7958216063d320a7d5c39d7e10454",
+          "en": "3d95249deefdd91041dd83b967c11e75f36f516d4f309116b77151a4511de6cb"
+        }
+      }
+    },
+    {
+      "id": "quiet-10",
+      "fen": "rn2kb1r/pp3ppp/2p1pn2/q4b2/2BP4/2N2N2/PPPBQPPP/R3K2R b KQkq - 1 8",
+      "move": "Bb4",
+      "summary": {
+        "analyze": "Nbd7 +53 cp (White's view), depth 9",
+        "explain": "Bb4 is good, loses 2.6% win chance, best Nbd7; motif none; \"Bb4 is a good move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "163a84a210340a55e54b3f48f7321f3a35a87553188a9d86fa7559b92dd3a7b5",
+          "en": "163a84a210340a55e54b3f48f7321f3a35a87553188a9d86fa7559b92dd3a7b5"
+        },
+        "explain": {
+          "ru": "b5d94b871ce5c8ea555a0240282fb151d1a3fa6dd9c7c4a74f3d449ab8b9ca4c",
+          "en": "b964352e00283a92763d6a29e26341d86f921fdae8194debf85c968065e66109"
+        }
+      }
+    },
+    {
+      "id": "end-01",
+      "fen": "8/8/8/4k3/8/8/3Q4/4K3 w - - 0 1",
+      "move": "Qd3",
+      "summary": {
+        "analyze": "Qd7 mate +7 (White's view), depth 64",
+        "explain": "Qd3 is best, loses 0.0% win chance, best Qd7; motif none; \"Qd3 is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "7e09dbba2b9540736fbda67cfcd3229eef5131625d3be89bb4cb9972bea2d1ba",
+          "en": "7e09dbba2b9540736fbda67cfcd3229eef5131625d3be89bb4cb9972bea2d1ba"
+        },
+        "explain": {
+          "ru": "72841fed98493a127e25711fd76edd2ff19d6549289df90376ae50a7e2a09b48",
+          "en": "164fb209f07aef0ef7bd33a5596b130a46fdc91619490298e597d40828d8674e"
+        }
+      }
+    },
+    {
+      "id": "end-02",
+      "fen": "8/8/8/8/3k4/8/8/R3K3 w - - 0 1",
+      "move": "Ra4+",
+      "summary": {
+        "analyze": "Ke2 mate +14 (White's view), depth 64",
+        "explain": "Ra4+ is best, loses 0.0% win chance, best Ke2; motif none; \"Ra4+ is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "e3856ad5bda0903808c91626732c5a23c079e2ab44f4ca347ed18ccc0b077a59",
+          "en": "e3856ad5bda0903808c91626732c5a23c079e2ab44f4ca347ed18ccc0b077a59"
+        },
+        "explain": {
+          "ru": "7178d3bddcda217ddf49343d68f16d008365d90a32ef8c7cac96365106b059b5",
+          "en": "f3abced8fbab333a06e6c110fa33f7c0cdc55e0254e3e07afa19345a39a2b62c"
+        }
+      }
+    },
+    {
+      "id": "end-03",
+      "fen": "8/8/8/3k4/8/3K4/3P4/8 w - - 0 1",
+      "move": "Ke3",
+      "summary": {
+        "analyze": "Ke3 0 cp (White's view), depth 64",
+        "explain": "Ke3 is best, loses 0.0% win chance, best Ke3; motif none; \"Ke3 is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "5f7f837815519d4b8f3616612609a7d1014ee8af564ed4d210251814aebde96c",
+          "en": "5f7f837815519d4b8f3616612609a7d1014ee8af564ed4d210251814aebde96c"
+        },
+        "explain": {
+          "ru": "067d616d01b5b3ed0f96fb2560524a95e674f41870d5ab611bef40dec0af56bf",
+          "en": "441c1d074d45eeba1d25646269f4e6ac60e401530458121e5c4356ee82d36d58"
+        }
+      }
+    },
+    {
+      "id": "end-04",
+      "fen": "8/p7/1p2k3/2p5/P1P1K3/1P6/8/8 w - - 0 1",
+      "move": "Kd3",
+      "summary": {
+        "analyze": "Kf4 0 cp (White's view), depth 17",
+        "explain": "Kd3 is good, loses 2.0% win chance, best Kf4; motif king-activation; \"Kd3 is a good move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "ef49fc192dca8361050c209da16098383f7fb7889781edbc169b2c31fd48d134",
+          "en": "ef49fc192dca8361050c209da16098383f7fb7889781edbc169b2c31fd48d134"
+        },
+        "explain": {
+          "ru": "6271d49bb77f3160473586a59a919398d3ce5d0491be32dc3e36bbaa53569c2c",
+          "en": "a4d58d5585ec8735fa3706abb6f07dec696cce95120df7ebb9a02c9587c4a66e"
+        }
+      }
+    },
+    {
+      "id": "end-05",
+      "fen": "8/8/8/7k/8/8/8/K1BN4 w - - 0 1",
+      "move": "Nf2",
+      "summary": {
+        "analyze": "Kb2 mate +28 (White's view), depth 64",
+        "explain": "Nf2 is best, loses 0.0% win chance, best Kb2; motif none; \"Nf2 is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "74f0839b77b5b4723ef77c7f4dc102fb6489e150280b01cc7ca7b1644b4fda38",
+          "en": "74f0839b77b5b4723ef77c7f4dc102fb6489e150280b01cc7ca7b1644b4fda38"
+        },
+        "explain": {
+          "ru": "b4552788514390985c543362ce1e1be4e48a4c6bf36d71fcab9103c8cebf0eed",
+          "en": "e639c14429d57571c07019b2a3cdcce7080e8829f17865dd1b7abc4add90ac6a"
+        }
+      }
+    },
+    {
+      "id": "end-06",
+      "fen": "8/8/8/8/2k5/8/1r6/K6Q w - - 0 1",
+      "move": "Qh4+",
+      "summary": {
+        "analyze": "Kxb2 mate +8 (White's view), depth 64",
+        "explain": "Qh4+ is best, loses 0.0% win chance, best Kxb2; motif none; \"Qh4+ is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "a81df7bf83a38bb4a19b825ea1d67dca741bdd851d93816b55dc7b434dbbbe1b",
+          "en": "a81df7bf83a38bb4a19b825ea1d67dca741bdd851d93816b55dc7b434dbbbe1b"
+        },
+        "explain": {
+          "ru": "f57c1e34d895d0f3c63e3e1bd536f7a1ce3b2fc6f1192de7944b75f51099766b",
+          "en": "ed722f0e360852ddd8ff80febb41fa36690821f05973879b0a68f6d7058b1baf"
+        }
+      }
+    },
+    {
+      "id": "end-07",
+      "fen": "1K1k4/1P6/8/8/8/8/r7/2R5 w - - 0 1",
+      "move": "Rc4",
+      "summary": {
+        "analyze": "Rc5 +525 cp (White's view), depth 13",
+        "explain": "Rc4 is inaccuracy, loses 9.7% win chance, best Rc5; motif promotion; \"Rc4 is an inaccuracy\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "67aaab566dc86cafe4466c88d85226a20b5c3156c9da1b72cb92e230c5a42f25",
+          "en": "67aaab566dc86cafe4466c88d85226a20b5c3156c9da1b72cb92e230c5a42f25"
+        },
+        "explain": {
+          "ru": "67ff54e161ac5e55cc8e6d109e02bac9aeac0955e459c27eac8d00e3702bfe95",
+          "en": "79471bd783bd86c0e7258d6ad58b721344ccf8bcc21c844412d6ff63ef5aec18"
+        }
+      }
+    },
+    {
+      "id": "end-08",
+      "fen": "8/8/8/4k3/8/2N1N3/8/K7 w - - 0 1",
+      "move": "Ncd5",
+      "summary": {
+        "analyze": "Ka2 0 cp (White's view), depth 64",
+        "explain": "Ncd5 is best, loses 0.0% win chance, best Ka2; motif none; \"Ncd5 is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "742888178de5031212d0c0046a348e0ee901966617a43fe4d9c1f62d44903647",
+          "en": "742888178de5031212d0c0046a348e0ee901966617a43fe4d9c1f62d44903647"
+        },
+        "explain": {
+          "ru": "62e6b266f117c84a5e08e0e937eaa68559db15451143196e1c6fc3e0d98220ce",
+          "en": "26a9b60471e03ea53c87d617bb1779c71ae36a19c280e2bf1806dde6e87461b0"
+        }
+      }
+    },
+    {
+      "id": "end-09",
+      "fen": "7k/8/6K1/7P/8/8/8/5B2 w - - 0 1",
+      "move": "Bd3",
+      "summary": {
+        "analyze": "Kg5 0 cp (White's view), depth 17",
+        "explain": "Bd3 is best, loses 0.0% win chance, best Kg5; motif none; \"Bd3 is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "94621199fb4d7f16ebdfdc3a00d8bcd97b1c46c2e9c54410cd4354268b2f679a",
+          "en": "94621199fb4d7f16ebdfdc3a00d8bcd97b1c46c2e9c54410cd4354268b2f679a"
+        },
+        "explain": {
+          "ru": "242ae776edd3cbdd4986f815c0d90f2ece69bba6b873eac0595bb89ade55158f",
+          "en": "283eca4b3359368fc04c275621bf6248678d6819b7f04d618eabf4ca21d6038a"
+        }
+      }
+    },
+    {
+      "id": "end-10",
+      "fen": "8/8/4k3/8/8/3b4/8/R3K3 w - - 0 1",
+      "move": "Ra6+",
+      "summary": {
+        "analyze": "Kd2 0 cp (White's view), depth 64",
+        "explain": "Ra6+ is best, loses 0.0% win chance, best Kd2; motif hanging-piece; \"Ra6+ is as good as the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "3ce799a9671eedaf61a528318560193fbaacc349687677fe1942548c2a120985",
+          "en": "3ce799a9671eedaf61a528318560193fbaacc349687677fe1942548c2a120985"
+        },
+        "explain": {
+          "ru": "38cfbbd381e37e9efd19dc7a058402ebc70f2a6452e08de575faff158f4c1543",
+          "en": "1801d71a6662f74f02b920ac28e45f1be285cfdc93e25577e0d6946ff1b82635"
+        }
+      }
+    },
+    {
+      "id": "mate-01",
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/R5K1 w - - 0 1",
+      "move": "Ra7",
+      "summary": {
+        "analyze": "Ra8# mate +1 (White's view), depth 64",
+        "explain": "Ra7 is blunder, loses 10.2% win chance, best Ra8#; motif none; \"Ra7 is a blunder\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "0641bcf7247b04078ebed1e71e8e7f42cda4123de076b396d702059d7d07e4b9",
+          "en": "0641bcf7247b04078ebed1e71e8e7f42cda4123de076b396d702059d7d07e4b9"
+        },
+        "explain": {
+          "ru": "97fb57936d2e7a9bc86732c2be10149bf79779ebb0399d5a0509aee781bbb88d",
+          "en": "98944d4c231fc6598f066a09c6d017d52b6cc8c99c09d849b262f05c53719d9a"
+        }
+      }
+    },
+    {
+      "id": "mate-02",
+      "fen": "2rr3k/pp3pp1/1nnqbN1p/3pN3/2pP4/2P3Q1/PPB4P/R4RK1 w - - 0 1",
+      "move": "Qg6",
+      "summary": {
+        "analyze": "Qg6 mate +2 (White's view), depth 64",
+        "explain": "Qg6 is best, loses 0.0% win chance, best Qg6; motif sacrifice; \"Qg6 is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "7930121ac8e3a8bff033f0512947d71c565ff66cfe77fbb94702941610e50cb4",
+          "en": "7930121ac8e3a8bff033f0512947d71c565ff66cfe77fbb94702941610e50cb4"
+        },
+        "explain": {
+          "ru": "68d442683a83321a9e78db4f5bfeff0d033749c93ba2f44b0bff9d5f3254ee0c",
+          "en": "324ccbbd7cfd8a4392c86085f89de2fa08780c569e47c901b25837721b5f501a"
+        }
+      }
+    },
+    {
+      "id": "mate-03",
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
+      "move": "Qxf7#",
+      "summary": {
+        "analyze": "Qxf7# mate +1 (White's view), depth 64",
+        "explain": "Qxf7# is best, loses 0.0% win chance, best Qxf7#; motif none; \"Qxf7# is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "fe1b3dcad69c3f25e76ff25372d06604209331aaca4da93954fa16ae45d2241b",
+          "en": "fe1b3dcad69c3f25e76ff25372d06604209331aaca4da93954fa16ae45d2241b"
+        },
+        "explain": {
+          "ru": "ee0bc0e2b64c65b98cc6d1468c308c301e1e9c829913a0f82f29ceac76135601",
+          "en": "7f71e7cbdd053522014e704e79befccc0b42c5b7e4649bb0982d9e212e44c24b"
+        }
+      }
+    },
+    {
+      "id": "sac-01",
+      "fen": "r1bqkb1r/ppp2ppp/2n5/3np1N1/2B5/8/PPPP1PPP/RNBQK2R w KQkq - 0 6",
+      "move": "Nxf7",
+      "summary": {
+        "analyze": "Nc3 +14 cp (White's view), depth 10",
+        "explain": "Nxf7 is inaccuracy, loses 8.3% win chance, best Nc3; motif isolated-pawn; \"Nxf7 is an inaccuracy\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "cb3cf5b76f17376b17ac0b53986073a7397ec7c30154fd155b9683788cbd7fa3",
+          "en": "cb3cf5b76f17376b17ac0b53986073a7397ec7c30154fd155b9683788cbd7fa3"
+        },
+        "explain": {
+          "ru": "be1f594ae17fa339349c094d1088df2d6bf067fe9b3d4f87e99dd726334c79a9",
+          "en": "3dcaf652e9169127d73892c138eb7b09bd08ea7a6eddd568056c7c772094705c"
+        }
+      }
+    },
+    {
+      "id": "blun-01",
+      "fen": "r1bqkb1r/pppn1ppp/5n2/3p2B1/3P4/2N5/PP2PPPP/R2QKBNR w KQkq - 0 6",
+      "move": "Nxd5",
+      "summary": {
+        "analyze": "Bf4 +22 cp (White's view), depth 9",
+        "explain": "Nxd5 is mistake, loses 14.3% win chance, best Bf4; motif hanging-piece; \"Nxd5 is a mistake\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "aacfb9da222328dcd9c000975923275214812554c738b5718fb335d16634b180",
+          "en": "aacfb9da222328dcd9c000975923275214812554c738b5718fb335d16634b180"
+        },
+        "explain": {
+          "ru": "bea397900787b67d1bd2adb093c8345c00ad8d6d7b7a066c100418f99617ce0a",
+          "en": "0edf3c81c77d64612ef08d8c84fa3ead0745e57cd718c1de52d15c6c5984f18c"
+        }
+      }
+    },
+    {
+      "id": "mate-04",
+      "fen": "6rk/6pp/8/6N1/8/8/8/6K1 w - - 0 1",
+      "move": "Nf7#",
+      "summary": {
+        "analyze": "Nf7# mate +1 (White's view), depth 64",
+        "explain": "Nf7# is best, loses 0.0% win chance, best Nf7#; motif mate-smothered; \"Nf7# is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "5a09188f6170c0d9e0a50197c21dc79424cdda19886395dc8566f33f1275bc71",
+          "en": "5a09188f6170c0d9e0a50197c21dc79424cdda19886395dc8566f33f1275bc71"
+        },
+        "explain": {
+          "ru": "87f71d2a800d377ea687b96ff9aaa0bf0e6dc117838fef48d681e84067ca670c",
+          "en": "7569b4caa54254aab8ab0a406d7ffec1eb7de1a1023059b657f85d817538485b"
+        }
+      }
+    },
+    {
+      "id": "sac-02",
+      "fen": "rn1qkbnr/ppp2p1p/3p2p1/4N3/2B1P3/2N5/PPPP1PPP/R1BbK2R w KQkq - 0 6",
+      "move": "Bxf7+",
+      "summary": {
+        "analyze": "Bxf7+ mate +2 (White's view), depth 64",
+        "explain": "Bxf7+ is best, loses 0.0% win chance, best Bxf7+; motif none; \"Bxf7+ is the best move\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "f325dbc1a8e252eb3683329c27b710fd2c45dd080f3cd9c7e37d2ef16142dbdf",
+          "en": "f325dbc1a8e252eb3683329c27b710fd2c45dd080f3cd9c7e37d2ef16142dbdf"
+        },
+        "explain": {
+          "ru": "55580c5d0c153a49e007bc7f878d5e50a1e3499b49c5f20114ed8762f40b1e27",
+          "en": "bc00c30e49ce39800c1344ba4c06a01ae197c9e23792c04c92096430f9902c2d"
+        }
+      }
+    },
+    {
+      "id": "sac-03",
+      "fen": "r1b1kbnr/pppp1ppp/8/4N1q1/2BnP3/8/PPPP1PPP/RNBQK2R w KQkq - 1 5",
+      "move": "Nxf7",
+      "summary": {
+        "analyze": "d3 -72 cp (White's view), depth 9",
+        "explain": "Nxf7 is blunder, loses 24.4% win chance, best d3; motif isolated-pawn; \"Nxf7 is a blunder\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "96c604c3914c801d757c4bc6adb5773f22f29c8afd1d3a70f6e381c279a9f47a",
+          "en": "96c604c3914c801d757c4bc6adb5773f22f29c8afd1d3a70f6e381c279a9f47a"
+        },
+        "explain": {
+          "ru": "802b210b2e5c628f60358e08c601c48aab7d88129759c6d4bd66599c03ec01dc",
+          "en": "51c94f49166a1a1caed062bed5a005fbc6a11ca2bd2bb2d2ac7a79644e0b01b8"
+        }
+      }
+    },
+    {
+      "id": "blun-02",
+      "fen": "rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2",
+      "move": "g4",
+      "summary": {
+        "analyze": "e4 -27 cp (White's view), depth 9",
+        "explain": "g4 is blunder, loses 46.9% win chance, best e4; motif none; \"g4 is a blunder\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "c4f50e1ff5fd44a23154b76ef72ba572264019d3a9fd54430216e53254e8b7ce",
+          "en": "c4f50e1ff5fd44a23154b76ef72ba572264019d3a9fd54430216e53254e8b7ce"
+        },
+        "explain": {
+          "ru": "a0eb7b37f716239bf78db9fd2e8a16fc71055bab45bf17d86798c10e36efbfe4",
+          "en": "d33fbb7616da4744bf9ff2d1e3b3697ec42e874dbded9c9f05355d643d8ec942"
+        }
+      }
+    },
+    {
+      "id": "blun-03",
+      "fen": "r1bqkb1r/pppp1p1p/2n2np1/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 2 5",
+      "move": "Qxf6",
+      "summary": {
+        "analyze": "Ne2 -46 cp (White's view), depth 10",
+        "explain": "Qxf6 is blunder, loses 38.5% win chance, best Ne2; motif hanging-piece; \"Qxf6 is a blunder\""
+      },
+      "hash": {
+        "analyze": {
+          "ru": "b2494baec7ad1682f7d606b6c2f962aa14ff26446690907ccb0bd767462cc9f2",
+          "en": "b2494baec7ad1682f7d606b6c2f962aa14ff26446690907ccb0bd767462cc9f2"
+        },
+        "explain": {
+          "ru": "289607d4362ceb074a2fd110d63cc946b579874a4065143bc8c77cce61080549",
+          "en": "a2fafacaf529fbeb1d3cd28096a6f050ed609945f3a347053eb8cd6525684714"
+        }
+      }
+    },
+    {
+      "id": "term-01",
+      "fen": "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3",
+      "move": null,
+      "summary": {
+        "analyze": "terminal: checkmate",
+        "explain": "terminal: checkmate"
+      },
+      "hash": {
+        "analyze": {
+          "ru": "3ab4ecde285bf20b4ddf5cd1998886a2a413df1df9a66822510b71cff1eadd7c",
+          "en": "c93b15a828e0017b21f6b0003bddfdbe55c23a73297253c1864aa86225ea6834"
+        },
+        "explain": {
+          "ru": "3ab4ecde285bf20b4ddf5cd1998886a2a413df1df9a66822510b71cff1eadd7c",
+          "en": "c93b15a828e0017b21f6b0003bddfdbe55c23a73297253c1864aa86225ea6834"
+        }
+      }
+    },
+    {
+      "id": "term-02",
+      "fen": "R5k1/5ppp/8/8/8/8/5PPP/6K1 b - - 1 1",
+      "move": null,
+      "summary": {
+        "analyze": "terminal: checkmate",
+        "explain": "terminal: checkmate"
+      },
+      "hash": {
+        "analyze": {
+          "ru": "abfcbfe26a662499684c862b042cb5a308ac6134b6cd2025f90c90792e0d7495",
+          "en": "8fa5758e50435422b4647135b71d666795c8d944a584bce82d97cbba3213cac1"
+        },
+        "explain": {
+          "ru": "abfcbfe26a662499684c862b042cb5a308ac6134b6cd2025f90c90792e0d7495",
+          "en": "8fa5758e50435422b4647135b71d666795c8d944a584bce82d97cbba3213cac1"
+        }
+      }
+    },
+    {
+      "id": "term-03",
+      "fen": "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1",
+      "move": null,
+      "summary": {
+        "analyze": "terminal: stalemate",
+        "explain": "terminal: stalemate"
+      },
+      "hash": {
+        "analyze": {
+          "ru": "06704af89baa441650563f133306e195b692b5a9d4f06f460ef3db0058d2029f",
+          "en": "bac3534271141221fb6f7e173ec462c377c45214387f12acb6ae075cf3b5d4c2"
+        },
+        "explain": {
+          "ru": "06704af89baa441650563f133306e195b692b5a9d4f06f460ef3db0058d2029f",
+          "en": "bac3534271141221fb6f7e173ec462c377c45214387f12acb6ae075cf3b5d4c2"
+        }
+      }
+    },
+    {
+      "id": "term-04",
+      "fen": "8/8/8/4k3/8/8/4P3/4K3 w - - 100 80",
+      "move": null,
+      "summary": {
+        "analyze": "terminal: fifty",
+        "explain": "terminal: fifty"
+      },
+      "hash": {
+        "analyze": {
+          "ru": "a19ea5af8f8b41ae039273c0234dae6983fc2bedf66d89e1b58f1aa3a39d0aaf",
+          "en": "9e3086605ee73608f0f10de8faff5b44db52654fcc6f4e0a658dcca6c9375c45"
+        },
+        "explain": {
+          "ru": "a19ea5af8f8b41ae039273c0234dae6983fc2bedf66d89e1b58f1aa3a39d0aaf",
+          "en": "9e3086605ee73608f0f10de8faff5b44db52654fcc6f4e0a658dcca6c9375c45"
+        }
+      }
+    },
+    {
+      "id": "term-05",
+      "fen": "8/8/8/4k3/8/8/8/4KB2 w - - 0 60",
+      "move": null,
+      "summary": {
+        "analyze": "terminal: insufficient",
+        "explain": "terminal: insufficient"
+      },
+      "hash": {
+        "analyze": {
+          "ru": "0812e19a7819addbb428a9c90052324345eb24b2cc5e4e693f7d2891c4ce1776",
+          "en": "d8f3fc893d886438f6d3f30fb79ee063b50fbca1ffc463b64a3dfcf8de8f75fe"
+        },
+        "explain": {
+          "ru": "0812e19a7819addbb428a9c90052324345eb24b2cc5e4e693f7d2891c4ce1776",
+          "en": "d8f3fc893d886438f6d3f30fb79ee063b50fbca1ffc463b64a3dfcf8de8f75fe"
+        }
+      }
+    }
+  ]
+}

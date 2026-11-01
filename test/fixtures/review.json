@@ -1,0 +1,12 @@
+{
+    "long": {
+        "note": "self-play of the opponent at elo 1200, cut at 220 plies (generated once, kept as data)",
+        "pgn": "[Event \"stepchess fixture: 220 plies\"]\n[Result \"*\"]\n\n1. d4 d5 2. c4 c5 3. dxc5 d4 4. e3 Nc6 5. a3 e5 6. Bd3 Qe7 7. exd4 e4 8. Be2 Qd7\n9. Be3 f5 10. Nc3 Be7 11. f3 Nh6 12. b4 exf3 13. Bxf3 Ng4 14. Bf4 Nxd4 15. Bxg4\nfxg4 16. Be3 Nf5 17. Bf4 g5 18. Bd6 Bxd6 19. Qxg4 Qe7+ 20. Nge2 Ng3 21. Qd4 Be5\n22. Nd5 Nxh1 23. Qe4 Qg7 24. Kd2 Nf2 25. Qc2 Bxa1 26. Kc1 Qe5 27. h3 Be6 28.\nNdc3 Qe3+ 29. Qd2 Qd3 30. c6 Rd8 31. Qxd3 O-O 32. Qe3 Rde8 33. cxb7 Kh8 34. Qe5+\nKg8 35. Qb5 Bxc3 36. Nxc3 Rd8 37. Nd5 Bxd5 38. h4 Bxb7 39. Qxb7 Nd3+ 40. Kc2 Rf7\n41. Qa6 Kg7 42. g3 h6 43. Qe6 gxh4 44. Qe3 Rc7 45. c5 Rf7 46. b5 Rc7 47. c6 h3\n48. Qe6 h2 49. Qh3 Rd5 50. Kc3 a6 51. Kc4 Rd6 52. a4 axb5+ 53. Kxb5 Rcxc6 54. a5\nRc5+ 55. Ka4 Rc4+ 56. Kb3 h1=Q 57. Qxh1 Rb4+ 58. Kc3 Rb2 59. a6 Rxa6 60. Kxd3\nRbb6 61. Qg2 Rb1 62. Qc2 Rab6 63. Ke3 h5 64. Kf3 R6b2 65. Qc7+ Kg6 66. Ke4 Rd1\n67. Qc4 Rf2 68. Qc5 Rf7 69. Qb5 Rff1 70. Ke3 Rf7 71. Ke2 Rd6 72. Qe8 Rd7 73.\nQe6+ Kg5 74. Ke1 Rh7 75. Kf2 Rhe7 76. Qb6 Rf7+ 77. Ke3 Rd1 78. Ke4 Rf6 79. Qb2\nRe1+ 80. Kd5 Re8 81. Qc2 Rf3 82. Qc7 Re2 83. Qg7+ Kf5 84. Qh7+ Kf6 85. Kd4 Kg5\n86. Qg7+ Kf5 87. Qf8+ Kg4 88. Qb4 Kxg3 89. Qc5 Kg4 90. Qc8+ Kf4 91. Qf8+ Kg3 92.\nQd6+ Kh3 93. Qb6 Kg4 94. Qb1 Rd2+ 95. Ke5 Rff2 96. Qb3 Rfe2+ 97. Kf6 Kh4 98.\nQa4+ Kg3 99. Qa3+ Kh4 100. Qb4+ Kg3 101. Qc5 Rh2 102. Kg5 Ra2 103. Qd6+ Kg2 104.\nKf4 h4 105. Qc6+ Kf1 106. Kg4 h3 107. Qe4 Rag2+ 108. Kh4 Re2 109. Qc6 Ra2 110.\nKg3 Rag2+ *"
+    },
+    "blunder": {
+        "note": "self-play of the opponent at elo 2400, with ply 42 (21...Re5) forced to the worst move of a shallow search: the rook hangs to dxe5",
+        "ply": 42,
+        "san": "Re5",
+        "pgn": "[Event \"stepchess fixture: a blunder at ply 42\"]\n[Result \"*\"]\n\n1. d4 Nf6 2. c4 e6 3. Nf3 d5 4. Nc3 Nc6 5. a3 Be7 6. cxd5 exd5 7. Ne5 Bd7 8. Bf4\nBd6 9. Nxc6 Bxc6 10. Bg3 O-O 11. Qb3 Re8 12. Rc1 Rc8 13. Bxd6 Qxd6 14. Nb5 Qf4\n15. Rd1 a6 16. Na7 Ne4 17. Qf3 Qxf3 18. gxf3 Ng5 19. Rd3 Rcd8 20. e3 Bd7 21. Be2\nRe5 22. dxe5 Bf5 23. Rb3 Re8 24. Rxb7 a5 25. Nc6 h6 26. Rxc7 Bh3 27. f4 Bg2 28.\nRg1 Ne6 29. Ra7 Be4 30. f3 Bc2 31. Bb5 Rf8 32. Kd2 Bb3 33. Nxa5 Rb8 34. a4 Ba2\n35. Nc6 Rf8 36. b4 Kh8 37. Rc1 d4 38. Nxd4 Nxd4 39. exd4 Kg8 40. f5 Rd8 *"
+    }
+}

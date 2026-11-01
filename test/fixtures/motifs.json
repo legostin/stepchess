@@ -1,0 +1,2379 @@
+[
+    {
+        "note": "fork: Nc7+ king and rook",
+        "fen": "r3k3/pp3ppp/8/1N6/8/8/PPP2PPP/6K1 w - - 0 1",
+        "move": "Nc7+",
+        "line": ["Kd7", "Nxa8"],
+        "expect": ["fork"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "fork",
+                "ply": 0,
+                "piece": "N",
+                "square": "c7",
+                "targets": "kr",
+                "pieces": ["c7", "e8", "a8"],
+                "squares": ["e8", "a8"],
+                "arrows": ["c7-e8:attack", "c7-a8:attack"]
+            }
+        ]
+    },
+    {
+        "note": "fork: pawn e5 hits bishop and knight",
+        "fen": "6k1/ppp2ppp/3b1n2/8/3PP3/2N5/PPP2PPP/6K1 w - - 0 1",
+        "move": "e5",
+        "line": ["Be7", "exf6", "Bxf6"],
+        "expect": ["fork"],
+        "forbid": ["hanging-piece"]
+    },
+    {
+        "note": "fork: Qa4+ king and loose bishop",
+        "fen": "4k3/ppp2ppp/8/8/7b/2P5/PP3PPP/3Q2K1 w - - 0 1",
+        "move": "Qa4+",
+        "line": ["c6", "Qxh4"],
+        "expect": ["fork"],
+        "forbid": []
+    },
+    {
+        "note": "fork: Nxf7 both rooks",
+        "fen": "1k1r3r/ppp2ppp/8/6N1/8/3P3P/PPP2PP1/R5K1 w - - 0 1",
+        "move": "Nxf7",
+        "line": ["Rdf8", "Nxh8", "Rxh8"],
+        "expect": ["fork"],
+        "forbid": []
+    },
+    {
+        "note": "fork: Nc7+ static, no line",
+        "fen": "r3k3/pp3ppp/8/1N6/8/8/PPP2PPP/6K1 w - - 0 1",
+        "move": "Nc7+",
+        "line": [],
+        "expect": ["fork"],
+        "forbid": []
+    },
+    {
+        "note": "fork: Nc7+ king and rook (mirrored)",
+        "fen": "6k1/ppp2ppp/8/8/1n6/8/PP3PPP/R3K3 b - - 0 1",
+        "move": "Nc2+",
+        "line": ["Kd2", "Nxa1"],
+        "expect": ["fork"],
+        "forbid": []
+    },
+    {
+        "note": "fork negative: the forking knight is taken",
+        "fen": "r2bk3/pp3ppp/8/1N6/8/8/PPP2PPP/6K1 w - - 0 1",
+        "move": "Nc7+",
+        "line": ["Bxc7"],
+        "expect": [],
+        "forbid": ["fork"]
+    },
+    {
+        "note": "fork negative: static, the knight is taken",
+        "fen": "r2bk3/pp3ppp/8/1N6/8/8/PPP2PPP/6K1 w - - 0 1",
+        "move": "Nc7+",
+        "line": [],
+        "expect": [],
+        "forbid": ["fork"]
+    },
+    {
+        "note": "pin-absolute: Bb5 pins Nc6",
+        "fen": "r1bqkbnr/ppp2ppp/2n5/3pp3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 0 4",
+        "move": "Bb5",
+        "line": [],
+        "expect": ["pin-absolute"],
+        "forbid": ["pin-relative", "skewer"],
+        "draw": [
+            {
+                "key": "pin-absolute",
+                "ply": 0,
+                "piece": "B",
+                "square": "b5",
+                "targets": "nk",
+                "pieces": ["b5", "c6", "e8"],
+                "squares": ["c6", "e8"],
+                "arrows": ["b5-c6:attack", "c6-e8:idea"]
+            }
+        ]
+    },
+    {
+        "note": "pin-absolute: Re1 pins Be6",
+        "fen": "4k3/ppp2ppp/4b3/8/8/8/PPP2PPP/R5K1 w - - 0 1",
+        "move": "Re1",
+        "line": [],
+        "expect": ["pin-absolute"],
+        "forbid": []
+    },
+    {
+        "note": "pin-absolute: Qd5 pins Nf7",
+        "fen": "6k1/pp3npp/8/8/8/8/PP3PPP/3Q2K1 w - - 0 1",
+        "move": "Qd5",
+        "line": [],
+        "expect": ["pin-absolute"],
+        "forbid": ["fork"]
+    },
+    {
+        "note": "pin-absolute: Bb4 pins Nc3",
+        "fen": "rnbqkbnr/pppp1ppp/4p3/8/3PP3/2N5/PPP2PPP/R1BQKBNR b KQkq - 1 3",
+        "move": "Bb4",
+        "line": [],
+        "expect": ["pin-absolute"],
+        "forbid": []
+    },
+    {
+        "note": "pin-absolute negative: the rook takes back",
+        "fen": "4k3/ppp2ppp/4r3/8/8/8/PPP2PPP/R5K1 w - - 0 1",
+        "move": "Re1",
+        "line": [],
+        "expect": [],
+        "forbid": ["pin-absolute"]
+    },
+    {
+        "note": "pins negative: Bb5 with d7 in place",
+        "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+        "move": "Bb5",
+        "line": [],
+        "expect": [],
+        "forbid": ["pin-absolute", "pin-relative"]
+    },
+    {
+        "note": "pin-relative: Bg5 pins Nf6 to the queen",
+        "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 4",
+        "move": "Bg5",
+        "line": [],
+        "expect": ["pin-relative"],
+        "forbid": ["pin-absolute", "skewer"],
+        "draw": [
+            {
+                "key": "pin-relative",
+                "ply": 0,
+                "piece": "B",
+                "square": "g5",
+                "targets": "nq",
+                "pieces": ["g5", "f6", "d8"],
+                "squares": ["f6", "d8"],
+                "arrows": ["g5-f6:attack", "f6-d8:idea"]
+            }
+        ]
+    },
+    {
+        "note": "pin-relative: Re1 pins Ne6 to the queen",
+        "fen": "4q1k1/ppp2ppp/4n3/8/8/1Q6/PPP2PPP/R5K1 w - - 0 1",
+        "move": "Re1",
+        "line": [],
+        "expect": ["pin-relative"],
+        "forbid": []
+    },
+    {
+        "note": "pin-relative: Bg4 pins Nf3",
+        "fen": "rnbqkbnr/ppp2ppp/3p4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 0 3",
+        "move": "Bg4",
+        "line": [],
+        "expect": ["pin-relative"],
+        "forbid": []
+    },
+    {
+        "note": "pin-relative: Bg5 pins Nf6 to the queen (mirrored)",
+        "fen": "r1bqkbnr/pp2pppp/2n5/2pp4/3P4/4PN2/PPP2PPP/RNBQKB1R b KQkq - 0 4",
+        "move": "Bg4",
+        "line": [],
+        "expect": ["pin-relative"],
+        "forbid": ["pin-absolute", "skewer"]
+    },
+    {
+        "note": "pin-relative negative: Bg5 en prise to h6",
+        "fen": "rnbqkb1r/ppp2pp1/4pn1p/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 0 5",
+        "move": "Bg5",
+        "line": [],
+        "expect": [],
+        "forbid": ["pin-relative"]
+    },
+    {
+        "note": "skewer: Ra7+ king and rook",
+        "fen": "8/3k3r/8/8/8/8/6PP/R5K1 w - - 0 1",
+        "move": "Ra7+",
+        "line": ["Ke6", "Rxh7"],
+        "expect": ["skewer"],
+        "forbid": ["pin-absolute"],
+        "draw": [
+            {
+                "key": "skewer",
+                "ply": 0,
+                "piece": "R",
+                "square": "a7",
+                "targets": "kr",
+                "pieces": ["a7", "d7", "h7"],
+                "squares": ["d7", "h7"],
+                "arrows": ["a7-d7:attack", "d7-h7:attack"]
+            }
+        ]
+    },
+    {
+        "note": "skewer: Bd5 queen and rook",
+        "fen": "r5k1/5ppp/2q5/8/4P3/1B5P/3Q1PP1/5RK1 w - - 0 1",
+        "move": "Bd5",
+        "line": ["Qc8", "Bxa8", "Qxa8"],
+        "expect": ["skewer"],
+        "forbid": []
+    },
+    {
+        "note": "skewer: Bb3+ king and queen",
+        "fen": "6q1/8/8/3k4/8/8/7K/3B4 w - - 0 1",
+        "move": "Bb3+",
+        "line": ["Ke5", "Bxg8"],
+        "expect": ["skewer"],
+        "forbid": []
+    },
+    {
+        "note": "skewer: Bb3+ static",
+        "fen": "6q1/8/8/3k4/8/8/7K/3B4 w - - 0 1",
+        "move": "Bb3+",
+        "line": [],
+        "expect": ["skewer"],
+        "forbid": []
+    },
+    {
+        "note": "skewer: Bb3+ king and queen (mirrored)",
+        "fen": "3b4/7k/8/8/3K4/8/8/6Q1 b - - 0 1",
+        "move": "Bb6+",
+        "line": ["Ke4", "Bxg1"],
+        "expect": ["skewer"],
+        "forbid": []
+    },
+    {
+        "note": "skewer negative: the rook behind is guarded",
+        "fen": "6b1/3k3r/8/8/8/8/6PP/R5K1 w - - 0 1",
+        "move": "Ra7+",
+        "line": ["Ke6", "Rxh7", "Bxh7"],
+        "expect": [],
+        "forbid": ["skewer"]
+    },
+    {
+        "note": "discovered-attack: Ne7+ uncovers the rook on the queen",
+        "fen": "3q1rk1/pp3ppp/8/3N4/1B6/8/PP3PPP/3R2K1 w - - 0 1",
+        "move": "Ne7+",
+        "line": ["Kh8", "Rxd8", "Rxd8"],
+        "expect": ["discovered-attack"],
+        "forbid": ["double-check", "clearance"],
+        "draw": [
+            {
+                "key": "discovered-attack",
+                "ply": 0,
+                "piece": "N",
+                "square": "e7",
+                "targets": "q",
+                "pieces": ["d1", "e7", "d8"],
+                "squares": ["d8"],
+                "arrows": ["d1-d8:attack", "d5-e7:idea"]
+            }
+        ]
+    },
+    {
+        "note": "discovered-attack: Bc6+ discovered check wins the queen",
+        "fen": "q3k3/3p1ppp/8/8/4B3/8/PPP2PPP/4R1K1 w - - 0 1",
+        "move": "Bc6+",
+        "line": ["Kf8", "Bxa8"],
+        "expect": ["discovered-attack"],
+        "forbid": ["double-check"]
+    },
+    {
+        "note": "discovered-attack: Bxh2+ uncovers the rook on the queen",
+        "fen": "4r1k1/pp3ppp/8/4b3/8/8/PP2QPPP/5RK1 b - - 0 1",
+        "move": "Bxh2+",
+        "line": ["Kxh2", "Rxe2"],
+        "expect": ["discovered-attack", "sacrifice"],
+        "forbid": ["clearance"],
+        "draw": [
+            {
+                "key": "sacrifice",
+                "ply": 0,
+                "piece": "b",
+                "square": "h2",
+                "targets": "",
+                "pieces": ["h2"],
+                "squares": ["h2"],
+                "arrows": ["e5-h2:best"]
+            }
+        ]
+    },
+    {
+        "note": "discovered-attack: Bc6+ discovered check wins the queen (mirrored)",
+        "fen": "4r1k1/ppp2ppp/8/4b3/8/8/3P1PPP/Q3K3 b - - 0 1",
+        "move": "Bc3+",
+        "line": ["Kf1", "Bxa1"],
+        "expect": ["discovered-attack"],
+        "forbid": ["double-check"]
+    },
+    {
+        "note": "discovered-attack negative: a quiet knight move",
+        "fen": "3q1rk1/pp3ppp/8/3N4/1B6/8/PP3PPP/3R2K1 w - - 0 1",
+        "move": "Nc3",
+        "line": ["Qc7"],
+        "expect": [],
+        "forbid": ["discovered-attack"]
+    },
+    {
+        "note": "double-check: Bg6++",
+        "fen": "4k2r/pp4pp/8/8/4B3/8/PPP2PPP/4R1K1 w - - 0 1",
+        "move": "Bg6+",
+        "line": [],
+        "expect": ["double-check"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "double-check",
+                "ply": 0,
+                "piece": "B",
+                "square": "g6",
+                "targets": "k",
+                "pieces": ["e1", "g6", "e8"],
+                "squares": ["e8"],
+                "arrows": ["e1-e8:attack", "g6-e8:attack"]
+            }
+        ]
+    },
+    {
+        "note": "double-check: Bg5++",
+        "fen": "r2k4/ppp2ppp/8/8/8/8/PPPB1PPP/3R2K1 w - - 0 1",
+        "move": "Bg5+",
+        "line": [],
+        "expect": ["double-check"],
+        "forbid": []
+    },
+    {
+        "note": "double-check: Nd3++",
+        "fen": "4r1k1/pp3ppp/8/4n3/8/8/PPP2PPP/3QK3 b - - 0 1",
+        "move": "Nd3+",
+        "line": [],
+        "expect": ["double-check"],
+        "forbid": []
+    },
+    {
+        "note": "double-check: Bg5++ (mirrored)",
+        "fen": "3r2k1/pppb1ppp/8/8/8/8/PPP2PPP/R2K4 b - - 0 1",
+        "move": "Bg4+",
+        "line": [],
+        "expect": ["double-check"],
+        "forbid": []
+    },
+    {
+        "note": "double-check negative: a single check",
+        "fen": "q3k3/3p1ppp/8/8/4B3/8/PPP2PPP/4R1K1 w - - 0 1",
+        "move": "Bc6+",
+        "line": [],
+        "expect": [],
+        "forbid": ["double-check"]
+    },
+    {
+        "note": "deflection: Re8+ drags the rook off the queen",
+        "fen": "2r3k1/pp3ppp/8/2q5/8/7P/PP3PP1/2Q1R1K1 w - - 0 1",
+        "move": "Re8+",
+        "line": ["Rxe8", "Qxc5"],
+        "expect": ["deflection", "sacrifice"],
+        "forbid": ["overloading", "decoy"],
+        "draw": [
+            {
+                "key": "deflection",
+                "ply": 0,
+                "piece": "R",
+                "square": "c5",
+                "targets": "r",
+                "pieces": ["e8", "c8"],
+                "squares": ["c5", "c8"],
+                "arrows": ["c8-e8:idea", "c1-c5:attack"]
+            }
+        ]
+    },
+    {
+        "note": "deflection: e5 chases the knight from h7",
+        "fen": "5rk1/pp3ppp/5n2/8/4P3/3B3Q/PP3PPP/6K1 w - - 0 1",
+        "move": "e5",
+        "line": ["Nd5", "Qxh7#"],
+        "expect": ["deflection"],
+        "forbid": ["mate-damiano"]
+    },
+    {
+        "note": "deflection: Rh7+ pulls the king off the queen",
+        "fen": "8/ppp2qk1/8/8/8/5Q2/PPP5/1K5R w - - 0 1",
+        "move": "Rh7+",
+        "line": ["Kxh7", "Qxf7+"],
+        "expect": ["deflection"],
+        "forbid": ["decoy"]
+    },
+    {
+        "note": "deflection: Re8+ drags the rook off the queen (mirrored)",
+        "fen": "2q1r1k1/pp3pp1/7p/8/2Q5/8/PP3PPP/2R3K1 b - - 0 1",
+        "move": "Re1+",
+        "line": ["Rxe1", "Qxc4"],
+        "expect": ["deflection", "sacrifice"],
+        "forbid": ["overloading", "decoy"]
+    },
+    {
+        "note": "deflection negative: the queen on c5 is guarded by a pawn",
+        "fen": "2r3k1/p4ppp/1p6/2q5/8/7P/PP3PP1/2Q1R1K1 w - - 0 1",
+        "move": "Re8+",
+        "line": ["Rxe8", "Qxc5", "bxc5"],
+        "expect": [],
+        "forbid": ["deflection"]
+    },
+    {
+        "note": "decoy: Rd8+ lures the queen into Nf7+",
+        "fen": "7k/ppp1q1pp/8/6N1/8/8/PPP2PPP/3R2K1 w - - 0 1",
+        "move": "Rd8+",
+        "line": ["Qxd8", "Nf7+", "Kg8", "Nxd8"],
+        "expect": ["decoy", "fork", "sacrifice"],
+        "forbid": ["back-rank-weakness"],
+        "draw": [
+            {
+                "key": "decoy",
+                "ply": 0,
+                "piece": "R",
+                "square": "d8",
+                "targets": "q",
+                "pieces": ["d8", "e7"],
+                "squares": ["d8"],
+                "arrows": ["e7-d8:idea", "g5-f7:attack"]
+            }
+        ]
+    },
+    {
+        "note": "decoy: Bxf7+ forces the king into Ne5+",
+        "fen": "3rkn2/pppqbppp/8/8/2B5/5N2/PPP2PPP/R5KR w - - 0 1",
+        "move": "Bxf7+",
+        "line": ["Kxf7", "Ne5+", "Ke6", "Nxd7", "Kxd7"],
+        "expect": ["decoy", "fork"],
+        "forbid": ["hanging-piece"]
+    },
+    {
+        "note": "decoy: Rd8+ lures the queen into Nf7+ (mirrored)",
+        "fen": "3r2k1/ppp2ppp/8/8/6n1/8/PPP1Q1PP/7K b - - 0 1",
+        "move": "Rd1+",
+        "line": ["Qxd1", "Nf2+", "Kg1", "Nxd1"],
+        "expect": ["decoy", "fork", "sacrifice"],
+        "forbid": ["back-rank-weakness"]
+    },
+    {
+        "note": "decoy negative: the sacrifice is not followed up",
+        "fen": "7k/ppp1q1pp/8/6N1/8/8/PPP2PPP/3R2K1 w - - 0 1",
+        "move": "Rd8+",
+        "line": ["Qxd8", "Nxh7"],
+        "expect": [],
+        "forbid": ["decoy"]
+    },
+    {
+        "note": "overloading: the queen guards c6 and f5",
+        "fen": "6k1/p2q1ppp/2n5/1B3b2/8/5Q1P/PP3PP1/6K1 w - - 0 1",
+        "move": "Bxc6",
+        "line": ["Qxc6", "Qxf5"],
+        "expect": ["overloading"],
+        "forbid": ["deflection", "remove-defender"],
+        "draw": [
+            {
+                "key": "overloading",
+                "ply": 0,
+                "piece": "B",
+                "square": "f5",
+                "targets": "q",
+                "pieces": ["d7", "c6", "f5"],
+                "squares": ["c6", "f5"],
+                "arrows": ["d7-c6:defend", "d7-f5:defend"]
+            }
+        ]
+    },
+    {
+        "note": "overloading: the knight guards d5 and h7",
+        "fen": "5rk1/pp3ppp/5n2/3b4/8/2NB3Q/PP3PPP/6K1 w - - 0 1",
+        "move": "Nxd5",
+        "line": ["Nxd5", "Qxh7#"],
+        "expect": ["overloading"],
+        "forbid": ["remove-defender", "hanging-piece"]
+    },
+    {
+        "note": "overloading: the queen guards c6 and f5 (mirrored)",
+        "fen": "6k1/pp3pp1/5q1p/8/1b3B2/2N5/P2Q1PPP/6K1 b - - 0 1",
+        "move": "Bxc3",
+        "line": ["Qxc3", "Qxf4"],
+        "expect": ["overloading"],
+        "forbid": ["deflection", "remove-defender"]
+    },
+    {
+        "note": "overloading negative: f5 has a second guard",
+        "fen": "6k1/p2q1p1p/2n3p1/1B3b2/8/5Q1P/PP3PP1/6K1 w - - 0 1",
+        "move": "Bxc6",
+        "line": ["Qxc6", "Qxf5", "gxf5"],
+        "expect": [],
+        "forbid": ["overloading"]
+    },
+    {
+        "note": "remove-defender: Bxf6 and Qxh7#",
+        "fen": "3q1rk1/pp3ppp/5n2/6B1/8/3B3Q/PP3PPP/6K1 w - - 0 1",
+        "move": "Bxf6",
+        "line": ["Qxf6", "Qxh7#"],
+        "expect": ["remove-defender"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "remove-defender",
+                "ply": 0,
+                "piece": "B",
+                "square": "h7",
+                "targets": "n",
+                "pieces": ["f6", "h7"],
+                "squares": ["f6", "h7"],
+                "arrows": ["g5-f6:attack", "h3-h7:attack"]
+            }
+        ]
+    },
+    {
+        "note": "remove-defender: Bxc6 and Nxd4",
+        "fen": "6k1/ppp2ppp/2n5/1B6/3b4/5N2/PPP2PPP/6K1 w - - 0 1",
+        "move": "Bxc6",
+        "line": ["bxc6", "Nxd4"],
+        "expect": ["remove-defender"],
+        "forbid": ["overloading"]
+    },
+    {
+        "note": "remove-defender: Bxf6 and Qxh7# (mirrored)",
+        "fen": "6k1/pp3ppp/3b3q/8/6b1/5N2/PP3PPP/3Q1RK1 b - - 0 1",
+        "move": "Bxf3",
+        "line": ["Qxf3", "Qxh2#"],
+        "expect": ["remove-defender"],
+        "forbid": []
+    },
+    {
+        "note": "remove-defender negative: d4 still has a pawn",
+        "fen": "6k1/pp3ppp/2n5/1Bp5/3b4/5N2/PPP2PPP/6K1 w - - 0 1",
+        "move": "Bxc6",
+        "line": ["bxc6", "Nxd4", "cxd4"],
+        "expect": [],
+        "forbid": ["remove-defender"]
+    },
+    {
+        "note": "interference: Rc7 cuts the queen off g7",
+        "fen": "7k/pq5p/1P3P2/P7/8/6Q1/6PP/2R3K1 w - - 0 1",
+        "move": "Rc7",
+        "line": ["a6", "Qg7#"],
+        "expect": ["interference"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "interference",
+                "ply": 0,
+                "piece": "R",
+                "square": "c7",
+                "targets": "q",
+                "pieces": ["c7", "b7"],
+                "squares": ["c7", "g7"],
+                "arrows": ["b7-g7:defend"]
+            }
+        ]
+    },
+    {
+        "note": "interference: d5 cuts the bishop off the pinned knight",
+        "fen": "4k3/pb4pp/1p6/8/2PPn3/8/PP3PPP/4R1K1 w - - 0 1",
+        "move": "d5",
+        "line": ["Kf8", "Rxe4"],
+        "expect": ["interference"],
+        "forbid": []
+    },
+    {
+        "note": "interference: Rc7 cuts the queen off g7 (mirrored)",
+        "fen": "2r3k1/6pp/6q1/8/p7/1p3p2/PQ5P/7K b - - 0 1",
+        "move": "Rc2",
+        "line": ["a3", "Qg2#"],
+        "expect": ["interference"],
+        "forbid": []
+    },
+    {
+        "note": "interference negative: the queen takes the knight and still guards",
+        "fen": "6k1/pp4pp/8/q3p3/8/2N2N2/PP3PPP/6K1 w - - 0 1",
+        "move": "Nd5",
+        "line": ["Qxd5", "Nxe5"],
+        "expect": [],
+        "forbid": ["interference"]
+    },
+    {
+        "note": "x-ray: Rd1 takes back through the rook",
+        "fen": "3r2k1/3r1ppp/8/Q7/8/8/5PPP/3R2K1 w - - 0 1",
+        "move": "Qxd8+",
+        "line": ["Rxd8", "Rxd8#"],
+        "expect": ["x-ray", "mate-back-rank"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "x-ray",
+                "ply": 0,
+                "piece": "R",
+                "square": "d8",
+                "targets": "r",
+                "pieces": ["d1", "d7", "d8"],
+                "squares": ["d8"],
+                "arrows": ["d1-d8:attack"]
+            },
+            {
+                "key": "mate-back-rank",
+                "ply": 2,
+                "piece": "R",
+                "square": "d8",
+                "targets": "k",
+                "pieces": ["d8", "g8"],
+                "squares": ["g8"],
+                "arrows": ["d8-g8:attack"]
+            }
+        ]
+    },
+    {
+        "note": "x-ray: Bb2 takes back through the bishop",
+        "fen": "6k1/pp3ppp/8/4p3/3b4/5N2/PB3PPP/1R4K1 w - - 0 1",
+        "move": "Nxe5",
+        "line": ["Bxe5", "Bxe5"],
+        "expect": ["x-ray"],
+        "forbid": []
+    },
+    {
+        "note": "x-ray: Rd1 takes back through the rook (mirrored)",
+        "fen": "3r2k1/5ppp/8/8/q7/8/3R1PPP/3R2K1 b - - 0 1",
+        "move": "Qxd1+",
+        "line": ["Rxd1", "Rxd1#"],
+        "expect": ["x-ray", "mate-back-rank"],
+        "forbid": []
+    },
+    {
+        "note": "x-ray negative: the recapture comes from another line",
+        "fen": "6k1/pp3ppp/8/4p3/3b4/5NB1/P4PPP/6K1 w - - 0 1",
+        "move": "Nxe5",
+        "line": ["Bxe5", "Bxe5"],
+        "expect": [],
+        "forbid": ["x-ray"]
+    },
+    {
+        "note": "zwischenzug: Qxa8+ before bxc3",
+        "fen": "r5k1/p4pp1/7p/3Q4/1b6/2N5/PP3PPP/6K1 b - - 0 1",
+        "move": "Bxc3",
+        "line": ["Qxa8+", "Kh7", "bxc3"],
+        "expect": ["zwischenzug"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "zwischenzug",
+                "ply": 1,
+                "piece": "Q",
+                "square": "a8",
+                "targets": "b",
+                "pieces": ["a8", "c3"],
+                "squares": ["c3"],
+                "arrows": ["d5-a8:best", "b2-c3:idea"]
+            }
+        ]
+    },
+    {
+        "note": "zwischenzug: Qxf2+ before gxf6",
+        "fen": "6k1/pp3ppp/1q3n2/6B1/4n3/8/PP3PPP/3R2K1 w - - 0 1",
+        "move": "Bxf6",
+        "line": ["Qxf2+", "Kh1", "gxf6"],
+        "expect": ["zwischenzug"],
+        "forbid": []
+    },
+    {
+        "note": "zwischenzug: from the game history",
+        "fen": "r5k1/p4pp1/7p/3Q4/1b6/2N5/PP3PPP/6K1 b - - 0 1",
+        "move": "Qxa8+",
+        "line": ["Kh7", "bxc3"],
+        "expect": ["zwischenzug"],
+        "forbid": [],
+        "pre": ["Bxc3"]
+    },
+    {
+        "note": "zwischenzug: Qxa8+ before bxc3 (mirrored)",
+        "fen": "6k1/pp3ppp/2n5/1B6/3q4/7P/P4PP1/R5K1 w - - 0 1",
+        "move": "Bxc6",
+        "line": ["Qxa1+", "Kh2", "bxc6"],
+        "expect": ["zwischenzug"],
+        "forbid": []
+    },
+    {
+        "note": "zwischenzug negative: the plain recapture",
+        "fen": "r5k1/p4pp1/7p/3Q4/1b6/2N5/PP3PPP/6K1 b - - 0 1",
+        "move": "Bxc3",
+        "line": ["bxc3"],
+        "expect": [],
+        "forbid": ["zwischenzug"]
+    },
+    {
+        "note": "desperado: the trapped knight takes c5",
+        "fen": "6k1/p4ppp/3p4/1pp5/N7/2P5/1P3PPP/6K1 w - - 0 1",
+        "move": "Nxc5",
+        "line": ["dxc5"],
+        "expect": ["desperado"],
+        "forbid": ["hanging-piece"],
+        "draw": [
+            {
+                "key": "desperado",
+                "ply": 0,
+                "piece": "N",
+                "square": "c5",
+                "targets": "p",
+                "pieces": ["c5"],
+                "squares": ["c5"],
+                "arrows": ["a4-c5:attack"]
+            }
+        ]
+    },
+    {
+        "note": "desperado: the trapped bishop takes b3",
+        "fen": "6k1/5pp1/7p/8/8/1P6/b1P2PPP/R2K4 b - - 0 1",
+        "move": "Bxb3",
+        "line": ["cxb3"],
+        "expect": ["desperado"],
+        "forbid": ["hanging-piece"]
+    },
+    {
+        "note": "desperado: the doomed knight takes a knight",
+        "fen": "6k1/p4ppp/1n1p4/1p6/N7/2P5/1P3PPP/6K1 w - - 0 1",
+        "move": "Nxb6",
+        "line": ["axb6"],
+        "expect": ["desperado"],
+        "forbid": []
+    },
+    {
+        "note": "desperado: the trapped bishop takes b3 (mirrored)",
+        "fen": "r2k4/B1p2ppp/1p6/8/8/7P/5PP1/6K1 w - - 0 1",
+        "move": "Bxb6",
+        "line": ["cxb6"],
+        "expect": ["desperado"],
+        "forbid": ["hanging-piece"]
+    },
+    {
+        "note": "desperado negative: the knight could retreat to c3",
+        "fen": "6k1/p4ppp/3p4/1pp5/N7/8/1P3PPP/6K1 w - - 0 1",
+        "move": "Nxc5",
+        "line": ["dxc5"],
+        "expect": [],
+        "forbid": ["desperado"]
+    },
+    {
+        "note": "trapped-piece: g4 traps the bishop on h5",
+        "fen": "6k1/pp3p1p/6p1/7b/8/7P/PP3PP1/6K1 w - - 0 1",
+        "move": "g4",
+        "line": ["Bxg4", "hxg4"],
+        "expect": ["trapped-piece"],
+        "forbid": ["hanging-piece"],
+        "draw": [
+            {
+                "key": "trapped-piece",
+                "ply": 0,
+                "piece": "P",
+                "square": "h5",
+                "targets": "b",
+                "pieces": ["h5"],
+                "squares": ["h5"],
+                "arrows": ["g2-g4:idea"]
+            }
+        ]
+    },
+    {
+        "note": "trapped-piece: Bb2 traps the knight on a1",
+        "fen": "6k1/5ppp/8/8/8/2P5/P4PPP/n1BK4 w - - 0 1",
+        "move": "Bb2",
+        "line": ["Nc2", "Kxc2"],
+        "expect": ["trapped-piece"],
+        "forbid": []
+    },
+    {
+        "note": "trapped-piece: Bb2 static",
+        "fen": "6k1/5ppp/8/8/8/2P5/P4PPP/n1BK4 w - - 0 1",
+        "move": "Bb2",
+        "line": [],
+        "expect": ["trapped-piece"],
+        "forbid": []
+    },
+    {
+        "note": "trapped-piece: g4 traps the bishop on h5 (mirrored)",
+        "fen": "6k1/pp3pp1/7p/8/7B/6P1/PP3P1P/6K1 b - - 0 1",
+        "move": "g5",
+        "line": ["Bxg5", "hxg5"],
+        "expect": ["trapped-piece"],
+        "forbid": ["hanging-piece"]
+    },
+    {
+        "note": "trapped-piece: Bb2 traps the knight on a1 (mirrored)",
+        "fen": "N1bk4/p4ppp/2p5/8/8/8/5PPP/6K1 b - - 0 1",
+        "move": "Bb7",
+        "line": ["Nc7", "Kxc7"],
+        "expect": ["trapped-piece"],
+        "forbid": []
+    },
+    {
+        "note": "trapped-piece negative: the bishop goes back to g6",
+        "fen": "6k1/pp3ppp/8/7b/8/7P/PP3PP1/6K1 w - - 0 1",
+        "move": "g4",
+        "line": ["Bg6"],
+        "expect": [],
+        "forbid": ["trapped-piece"]
+    },
+    {
+        "note": "hanging-piece: Qxd4",
+        "fen": "6k1/pp3ppp/8/8/3n4/8/PP3PPP/3Q2K1 w - - 0 1",
+        "move": "Qxd4",
+        "line": [],
+        "expect": ["hanging-piece"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "hanging-piece",
+                "ply": 0,
+                "piece": "Q",
+                "square": "d4",
+                "targets": "n",
+                "pieces": ["d4"],
+                "squares": ["d4"],
+                "arrows": ["d1-d4:attack"]
+            }
+        ]
+    },
+    {
+        "note": "hanging-piece: Bxh1",
+        "fen": "6k1/1b3ppp/8/8/8/8/PPP2P1P/2K4R b - - 0 1",
+        "move": "Bxh1",
+        "line": [],
+        "expect": ["hanging-piece"],
+        "forbid": []
+    },
+    {
+        "note": "hanging-piece: Nxe5 with a line",
+        "fen": "6k1/pp3ppp/8/4b3/8/5N2/PP3PPP/6K1 w - - 0 1",
+        "move": "Nxe5",
+        "line": ["f6", "Nc4"],
+        "expect": ["hanging-piece"],
+        "forbid": []
+    },
+    {
+        "note": "hanging-piece: Qxh7+?? Nxh7, the queen took a guarded pawn",
+        "fen": "6k1/pp3ppp/5n2/7Q/8/8/PP3PPP/6K1 w - - 0 1",
+        "move": "Qxh7+",
+        "line": ["Nxh7"],
+        "expect": ["hanging-piece"],
+        "forbid": []
+    },
+    {
+        "note": "hanging-piece: Qxh7+?? Nxh7, the queen took a guarded pawn (mirrored)",
+        "fen": "6k1/pp3ppp/8/8/7q/5N2/PP3PPP/6K1 b - - 0 1",
+        "move": "Qxh2+",
+        "line": ["Nxh2"],
+        "expect": ["hanging-piece"],
+        "forbid": []
+    },
+    {
+        "note": "hanging-piece: Qd5?? exd5",
+        "fen": "6k1/pp3ppp/4p3/8/8/8/PP3PPP/3Q2K1 w - - 0 1",
+        "move": "Qd5",
+        "line": ["exd5"],
+        "expect": ["hanging-piece"],
+        "forbid": []
+    },
+    {
+        "note": "hanging-piece: Qd5?? exd5, the queen was guarded",
+        "fen": "6k1/pp3ppp/4p3/8/8/3Q4/PP3PPP/3R2K1 w - - 0 1",
+        "move": "Qd5",
+        "line": ["exd5", "Rxd5"],
+        "expect": ["hanging-piece"],
+        "forbid": []
+    },
+    {
+        "note": "isolated-pawn negative: 1.e4 and a long line",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "move": "e4",
+        "line": ["Nc6", "Nc3", "e5", "Nf3", "Nf6", "d4", "exd4"],
+        "expect": [],
+        "forbid": ["isolated-pawn", "passed-pawn-created", "desperado"]
+    },
+    {
+        "note": "hanging-piece negative: the knight was guarded",
+        "fen": "6k1/pp3ppp/8/4p3/3n4/8/PP3PPP/3Q2K1 w - - 0 1",
+        "move": "Qxd4",
+        "line": [],
+        "expect": [],
+        "forbid": ["hanging-piece"]
+    },
+    {
+        "note": "back-rank-weakness: Rxc6 would allow Re8#",
+        "fen": "2r3k1/p4ppp/2n5/8/Q7/8/PP3PPP/4R1K1 w - - 0 1",
+        "move": "Qxc6",
+        "line": ["h6", "Qxc8+"],
+        "expect": ["back-rank-weakness"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "back-rank-weakness",
+                "ply": 0,
+                "piece": "Q",
+                "square": "c6",
+                "targets": "k",
+                "pieces": ["c6", "g8"],
+                "squares": ["g8"],
+                "arrows": ["a4-c6:attack"]
+            }
+        ]
+    },
+    {
+        "note": "back-rank-weakness: Qe4 threatens Qe8# and hits the knight",
+        "fen": "6k1/pp3ppp/8/8/n5P1/8/PP3P1P/1Q4K1 w - - 0 1",
+        "move": "Qe4",
+        "line": ["h6", "Qxa4"],
+        "expect": ["back-rank-weakness"],
+        "forbid": []
+    },
+    {
+        "note": "back-rank-weakness: Qxc6 static",
+        "fen": "2r3k1/p4ppp/2n5/8/Q7/8/PP3PPP/4R1K1 w - - 0 1",
+        "move": "Qxc6",
+        "line": [],
+        "expect": ["back-rank-weakness"],
+        "forbid": []
+    },
+    {
+        "note": "back-rank-weakness: Rxc6 would allow Re8# (mirrored)",
+        "fen": "4r1k1/pp3ppp/8/q7/8/2N5/P4PPP/2R3K1 b - - 0 1",
+        "move": "Qxc3",
+        "line": ["h3", "Qxc1+"],
+        "expect": ["back-rank-weakness"],
+        "forbid": []
+    },
+    {
+        "note": "back-rank-weakness negative: the king has air on h7",
+        "fen": "2r3k1/p4pp1/2n4p/8/Q7/8/PP3PPP/4R1K1 w - - 0 1",
+        "move": "Qxc6",
+        "line": ["Rxc6"],
+        "expect": [],
+        "forbid": ["back-rank-weakness"]
+    },
+    {
+        "note": "clearance: Nxe6 opens the long diagonal for Qxg7#",
+        "fen": "5rk1/pp3ppp/4p3/8/3N2Q1/8/PB3PPP/6K1 w - - 0 1",
+        "move": "Nxe6",
+        "line": ["fxe6", "Qxg7#"],
+        "expect": ["clearance"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "clearance",
+                "ply": 0,
+                "piece": "N",
+                "square": "d4",
+                "targets": "Q",
+                "pieces": ["e6", "g4"],
+                "squares": ["d4"],
+                "arrows": ["d4-e6:idea", "g4-g7:attack"]
+            }
+        ]
+    },
+    {
+        "note": "clearance negative: Bxf7+ is a discovered attack",
+        "fen": "3r2k1/pp3ppp/8/3B4/8/8/PP3PPP/3R2K1 w - - 0 1",
+        "move": "Bxf7+",
+        "line": ["Kxf7", "Rxd8"],
+        "expect": ["discovered-attack"],
+        "forbid": ["clearance"]
+    },
+    {
+        "note": "clearance: Nxc6 opens the long diagonal",
+        "fen": "5rk1/pp3ppp/2b5/8/3N2Q1/8/PB3PPP/6K1 w - - 0 1",
+        "move": "Nxc6",
+        "line": ["bxc6", "Qxg7#"],
+        "expect": ["clearance"],
+        "forbid": ["hanging-piece"]
+    },
+    {
+        "note": "clearance: Nxe6 opens the long diagonal for Qxg7# (mirrored)",
+        "fen": "6k1/pb3ppp/8/3n2q1/8/4P3/PP3PPP/5RK1 b - - 0 1",
+        "move": "Nxe3",
+        "line": ["fxe3", "Qxg2#"],
+        "expect": ["clearance"],
+        "forbid": []
+    },
+    {
+        "note": "clearance negative: a quiet bishop move",
+        "fen": "3r2k1/pp3ppp/8/3B4/8/8/PP3PPP/3R2K1 w - - 0 1",
+        "move": "Be4",
+        "line": ["h6", "Rxd8+"],
+        "expect": [],
+        "forbid": ["clearance"]
+    },
+    {
+        "note": "promotion: e8=Q+",
+        "fen": "6k1/4P3/8/8/8/8/5PPP/6K1 w - - 0 1",
+        "move": "e8=Q+",
+        "line": [],
+        "expect": ["promotion"],
+        "forbid": ["underpromotion"],
+        "draw": [
+            {
+                "key": "promotion",
+                "ply": 0,
+                "piece": "Q",
+                "square": "e8",
+                "targets": "",
+                "pieces": ["e8"],
+                "squares": ["e8"],
+                "arrows": ["e7-e8:best"]
+            }
+        ]
+    },
+    {
+        "note": "promotion: bxa8=Q",
+        "fen": "r5k1/1P3ppp/8/8/8/8/5PPP/6K1 w - - 0 1",
+        "move": "bxa8=Q+",
+        "line": [],
+        "expect": ["promotion"],
+        "forbid": []
+    },
+    {
+        "note": "promotion: a1=Q+",
+        "fen": "6k1/5ppp/8/8/8/8/p4PPP/6K1 b - - 0 1",
+        "move": "a1=Q+",
+        "line": [],
+        "expect": ["promotion"],
+        "forbid": []
+    },
+    {
+        "note": "promotion negative: the new queen is taken",
+        "fen": "3r2k1/4P3/8/8/8/8/5PPP/6K1 w - - 0 1",
+        "move": "e8=Q+",
+        "line": [],
+        "expect": [],
+        "forbid": ["promotion"]
+    },
+    {
+        "note": "underpromotion: d8=N+ forks king and queen",
+        "fen": "8/1q1P1k2/8/8/8/8/5PPP/6K1 w - - 0 1",
+        "move": "d8=N+",
+        "line": ["Ke7", "Nxb7"],
+        "expect": ["underpromotion", "fork"],
+        "forbid": ["promotion"],
+        "draw": [
+            {
+                "key": "underpromotion",
+                "ply": 0,
+                "piece": "N",
+                "square": "d8",
+                "targets": "",
+                "pieces": ["d8"],
+                "squares": ["d8"],
+                "arrows": ["d7-d8:best"]
+            }
+        ]
+    },
+    {
+        "note": "underpromotion: g8=R, a queen would stalemate",
+        "fen": "8/6P1/8/8/8/8/2K5/k7 w - - 0 1",
+        "move": "g8=R",
+        "line": [],
+        "expect": ["underpromotion"],
+        "forbid": []
+    },
+    {
+        "note": "underpromotion: d8=N+ forks king and queen (mirrored)",
+        "fen": "6k1/5ppp/8/8/8/8/1Q1p1K2/8 b - - 0 1",
+        "move": "d1=N+",
+        "line": ["Ke2", "Nxb2"],
+        "expect": ["underpromotion", "fork"],
+        "forbid": ["promotion"]
+    },
+    {
+        "note": "underpromotion: g8=R, a queen would stalemate (mirrored)",
+        "fen": "K7/2k5/8/8/8/8/6p1/8 b - - 0 1",
+        "move": "g1=R",
+        "line": [],
+        "expect": ["underpromotion"],
+        "forbid": []
+    },
+    {
+        "note": "underpromotion negative: a rook for nothing",
+        "fen": "6k1/4P3/8/8/8/8/5PPP/6K1 w - - 0 1",
+        "move": "e8=R+",
+        "line": [],
+        "expect": [],
+        "forbid": ["underpromotion"]
+    },
+    {
+        "note": "sacrifice: Qg8+ Rxg8 Nf7#",
+        "fen": "5r1k/pp4pp/7N/3Q4/8/8/PP4PP/6K1 w - - 0 1",
+        "move": "Qg8+",
+        "line": ["Rxg8", "Nf7#"],
+        "expect": ["sacrifice", "mate-smothered", "decoy"],
+        "forbid": ["deflection"],
+        "draw": [
+            {
+                "key": "mate-smothered",
+                "ply": 2,
+                "piece": "N",
+                "square": "f7",
+                "targets": "k",
+                "pieces": ["f7", "h8"],
+                "squares": ["h8"],
+                "arrows": ["f7-h8:attack"]
+            }
+        ]
+    },
+    {
+        "note": "sacrifice negative: a blunder, not a sacrifice",
+        "fen": "r2bk3/pp3ppp/8/1N6/8/8/PPP2PPP/6K1 w - - 0 1",
+        "move": "Nc7+",
+        "line": ["Bxc7"],
+        "expect": [],
+        "forbid": ["sacrifice"]
+    },
+    {
+        "note": "sacrifice negative: the Scotch, 4.Nxd4 Nxd4 Qxd4",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "move": "Nxd4",
+        "line": ["Nxd4", "Qxd4"],
+        "expect": [],
+        "forbid": ["sacrifice", "hanging-piece"],
+        "pre": ["e4", "e5", "Nf3", "Nc6", "d4", "exd4"]
+    },
+    {
+        "note": "hanging-piece negative: the exchange Ruy Lopez, 4.Bxc6 dxc6",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "move": "Bxc6",
+        "line": ["dxc6"],
+        "expect": [],
+        "forbid": ["hanging-piece", "sacrifice"],
+        "pre": ["e4", "e5", "Nf3", "Nc6", "Bb5", "a6"]
+    },
+    {
+        "note": "sacrifice negative: Nxe5 Nxe5 Rxe5+ wins a pawn",
+        "fen": "r1b1k3/8/2n5/4p3/8/5N2/8/4R1K1 w - - 0 1",
+        "move": "Nxe5",
+        "line": ["Nxe5", "Rxe5+"],
+        "expect": [],
+        "forbid": ["sacrifice", "hanging-piece", "fortress"]
+    },
+    {
+        "note": "sacrifice negative: an even trade",
+        "fen": "6k1/pp1q1ppp/2n5/1B3b2/8/5Q2/PP3PPP/6K1 w - - 0 1",
+        "move": "Bxc6",
+        "line": ["Qxc6"],
+        "expect": [],
+        "forbid": ["sacrifice"]
+    },
+    {
+        "note": "tactics negative: 1.Nf3 d5 2.g3",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "move": "Nf3",
+        "line": ["d5", "g3", "Nf6", "Bg2"],
+        "expect": [],
+        "forbid": [
+            "fork",
+            "pin-absolute",
+            "pin-relative",
+            "skewer",
+            "discovered-attack",
+            "double-check",
+            "deflection",
+            "decoy",
+            "overloading",
+            "remove-defender",
+            "interference",
+            "x-ray",
+            "zwischenzug",
+            "desperado",
+            "trapped-piece",
+            "hanging-piece",
+            "back-rank-weakness",
+            "clearance",
+            "promotion",
+            "underpromotion",
+            "sacrifice"
+        ]
+    },
+    {
+        "note": "tactics negative: a quiet Ruy Lopez",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "move": "e4",
+        "line": ["e5", "Nf3", "Nc6", "Bb5", "a6", "Ba4", "Nf6", "O-O", "Be7"],
+        "expect": [],
+        "forbid": [
+            "fork",
+            "pin-absolute",
+            "pin-relative",
+            "skewer",
+            "discovered-attack",
+            "double-check",
+            "deflection",
+            "decoy",
+            "overloading",
+            "remove-defender",
+            "interference",
+            "x-ray",
+            "zwischenzug",
+            "desperado",
+            "trapped-piece",
+            "hanging-piece",
+            "back-rank-weakness",
+            "clearance",
+            "promotion",
+            "underpromotion",
+            "sacrifice"
+        ]
+    },
+    {
+        "note": "mate-back-rank: Rd8#",
+        "fen": "6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1",
+        "move": "Rd8#",
+        "line": [],
+        "expect": ["mate-back-rank"],
+        "forbid": ["mate-ladder", "mate-corridor"]
+    },
+    {
+        "note": "mate-back-rank: Rd8# (mirrored)",
+        "fen": "3r2k1/5ppp/8/8/8/8/5PPP/6K1 b - - 0 1",
+        "move": "Rd1#",
+        "line": [],
+        "expect": ["mate-back-rank"],
+        "forbid": ["mate-ladder", "mate-corridor"]
+    },
+    {
+        "note": "mate-back-rank: Qa8#",
+        "fen": "7k/6pp/8/8/8/8/5PPP/Q5K1 w - - 0 1",
+        "move": "Qa8#",
+        "line": [],
+        "expect": ["mate-back-rank"],
+        "forbid": []
+    },
+    {
+        "note": "mate-back-rank negative: a ladder",
+        "fen": "6k1/R7/8/8/8/8/8/3R2K1 w - - 0 1",
+        "move": "Rd8#",
+        "line": [],
+        "expect": ["mate-ladder"],
+        "forbid": ["mate-back-rank"],
+        "draw": [
+            {
+                "key": "mate-ladder",
+                "ply": 0,
+                "piece": "R",
+                "square": "d8",
+                "targets": "k",
+                "pieces": ["d8", "a7", "g8"],
+                "squares": ["g8"],
+                "arrows": ["d8-g8:attack"]
+            }
+        ]
+    },
+    {
+        "note": "mate-smothered: Philidor",
+        "fen": "5r1k/pp4pp/7N/3Q4/8/8/PP4PP/6K1 w - - 0 1",
+        "move": "Qg8+",
+        "line": ["Rxg8", "Nf7#"],
+        "expect": ["mate-smothered", "decoy"],
+        "forbid": ["deflection"]
+    },
+    {
+        "note": "mate-smothered: Nf7#",
+        "fen": "6rk/6pp/8/6N1/8/8/8/6K1 w - - 0 1",
+        "move": "Nf7#",
+        "line": [],
+        "expect": ["mate-smothered"],
+        "forbid": []
+    },
+    {
+        "note": "mate-smothered: Nc7#",
+        "fen": "kr6/pp6/8/3N4/8/8/8/6K1 w - - 0 1",
+        "move": "Nc7#",
+        "line": [],
+        "expect": ["mate-smothered"],
+        "forbid": []
+    },
+    {
+        "note": "mate-smothered: Philidor (mirrored)",
+        "fen": "6k1/pp4pp/8/8/3q4/7n/PP4PP/5R1K b - - 0 1",
+        "move": "Qg1+",
+        "line": ["Rxg1", "Nf2#"],
+        "expect": ["mate-smothered", "decoy"],
+        "forbid": ["deflection"]
+    },
+    {
+        "note": "mate-smothered negative: only a check",
+        "fen": "7k/6pp/8/6N1/8/8/8/6K1 w - - 0 1",
+        "move": "Nf7+",
+        "line": [],
+        "expect": [],
+        "forbid": ["mate-smothered"]
+    },
+    {
+        "note": "mate-anastasia: Rh3#",
+        "fen": "8/pp2Nppk/8/8/8/3R4/PP3PPP/6K1 w - - 0 1",
+        "move": "Rh3#",
+        "line": [],
+        "expect": ["mate-anastasia"],
+        "forbid": ["mate-greco", "mate-corridor"],
+        "draw": [
+            {
+                "key": "mate-anastasia",
+                "ply": 0,
+                "piece": "R",
+                "square": "h3",
+                "targets": "k",
+                "pieces": ["h3", "e7", "h7"],
+                "squares": ["h7"],
+                "arrows": ["h3-h7:attack"]
+            }
+        ]
+    },
+    {
+        "note": "mate-anastasia: Qh5#",
+        "fen": "8/pp2Nppk/8/8/8/8/PP3PPP/3Q2K1 w - - 0 1",
+        "move": "Qh5#",
+        "line": [],
+        "expect": ["mate-anastasia"],
+        "forbid": []
+    },
+    {
+        "note": "mate-anastasia: Rh3# (mirrored)",
+        "fen": "6k1/pp3ppp/3r4/8/8/8/PP2nPPK/8 b - - 0 1",
+        "move": "Rh6#",
+        "line": [],
+        "expect": ["mate-anastasia"],
+        "forbid": ["mate-greco", "mate-corridor"]
+    },
+    {
+        "note": "mate-greco: Qh5#",
+        "fen": "7k/pp4p1/8/8/2B5/8/PP3PPP/3Q2K1 w - - 0 1",
+        "move": "Qh5#",
+        "line": [],
+        "expect": ["mate-greco"],
+        "forbid": ["mate-anastasia"],
+        "draw": [
+            {
+                "key": "mate-greco",
+                "ply": 0,
+                "piece": "Q",
+                "square": "h5",
+                "targets": "k",
+                "pieces": ["h5", "c4", "h8"],
+                "squares": ["h8"],
+                "arrows": ["h5-h8:attack"]
+            }
+        ]
+    },
+    {
+        "note": "mate-greco: Rh3#",
+        "fen": "7k/pp4p1/8/8/2B5/3R4/PP3PPP/6K1 w - - 0 1",
+        "move": "Rh3#",
+        "line": [],
+        "expect": ["mate-greco"],
+        "forbid": ["mate-anastasia"]
+    },
+    {
+        "note": "mate-greco: Qh5# (mirrored)",
+        "fen": "3q2k1/pp3ppp/8/2b5/8/8/PP4P1/7K b - - 0 1",
+        "move": "Qh4#",
+        "line": [],
+        "expect": ["mate-greco"],
+        "forbid": ["mate-anastasia"]
+    },
+    {
+        "note": "mate-arabian: Rh7#",
+        "fen": "7k/pR6/5N2/8/8/8/5PPP/6K1 w - - 0 1",
+        "move": "Rh7#",
+        "line": [],
+        "expect": ["mate-arabian"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "mate-arabian",
+                "ply": 0,
+                "piece": "R",
+                "square": "h7",
+                "targets": "k",
+                "pieces": ["h7", "f6", "h8"],
+                "squares": ["h8"],
+                "arrows": ["h7-h8:attack"]
+            }
+        ]
+    },
+    {
+        "note": "mate-arabian: Rg8#",
+        "fen": "7k/p7/5N2/8/8/6R1/5P1P/7K w - - 0 1",
+        "move": "Rg8#",
+        "line": [],
+        "expect": ["mate-arabian"],
+        "forbid": []
+    },
+    {
+        "note": "mate-arabian: Rh7# (mirrored)",
+        "fen": "6k1/5ppp/8/8/8/5n2/Pr6/7K b - - 0 1",
+        "move": "Rh2#",
+        "line": [],
+        "expect": ["mate-arabian"],
+        "forbid": []
+    },
+    {
+        "note": "mate-arabian negative: the rook mates from afar",
+        "fen": "7k/R7/6K1/8/8/8/8/8 w - - 0 1",
+        "move": "Ra8#",
+        "line": [],
+        "expect": [],
+        "forbid": ["mate-arabian"]
+    },
+    {
+        "note": "mate-boden: Ba6#",
+        "fen": "2kr4/p2n1ppp/8/8/5B2/8/PPP1BPPP/6K1 w - - 0 1",
+        "move": "Ba6#",
+        "line": [],
+        "expect": ["mate-boden"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "mate-boden",
+                "ply": 0,
+                "piece": "B",
+                "square": "a6",
+                "targets": "k",
+                "pieces": ["a6", "f4", "c8"],
+                "squares": ["c8"],
+                "arrows": ["a6-c8:attack"]
+            }
+        ]
+    },
+    {
+        "note": "mate-boden: Be6#",
+        "fen": "6kr/pp5p/7B/8/6B1/8/PPP2PPP/6K1 w - - 0 1",
+        "move": "Be6#",
+        "line": [],
+        "expect": ["mate-boden"],
+        "forbid": []
+    },
+    {
+        "note": "mate-boden: Ba6# (mirrored)",
+        "fen": "6k1/ppp1bppp/8/5b2/8/8/P2N1PPP/2KR4 b - - 0 1",
+        "move": "Ba3#",
+        "line": [],
+        "expect": ["mate-boden"],
+        "forbid": []
+    },
+    {
+        "note": "mate-boden negative: a bishop and a queen",
+        "fen": "7k/7p/8/8/8/8/8/2B3QK w - - 0 1",
+        "move": "Bb2#",
+        "line": [],
+        "expect": [],
+        "forbid": ["mate-boden"]
+    },
+    {
+        "note": "mate-legal: Legal's trap",
+        "fen": "rn1qkbnr/ppp2p1p/3p2p1/4p3/2B1P1b1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 5",
+        "move": "Nxe5",
+        "line": ["Bxd1", "Bxf7+", "Ke7", "Nd5#"],
+        "expect": ["mate-legal"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "mate-legal",
+                "ply": 4,
+                "piece": "N",
+                "square": "d5",
+                "targets": "k",
+                "pieces": ["d5", "f7", "e5", "e7"],
+                "squares": ["e7"],
+                "arrows": ["d5-e7:attack"]
+            }
+        ]
+    },
+    {
+        "note": "mate-legal: with h3 Bh5",
+        "fen": "r2qkbnr/ppp2ppp/2np4/4p2b/2B1P3/2N2N1P/PPPP1PP1/R1BQK2R w KQkq - 1 6",
+        "move": "Nxe5",
+        "line": ["Bxd1", "Bxf7+", "Ke7", "Nd5#"],
+        "expect": ["mate-legal"],
+        "forbid": []
+    },
+    {
+        "note": "mate-legal: Legal's trap (mirrored)",
+        "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p1B1/4P3/3P2P1/PPP2P1P/RN1QKBNR b KQkq - 0 5",
+        "move": "Nxe4",
+        "line": ["Bxd8", "Bxf2+", "Ke2", "Nd4#"],
+        "expect": ["mate-legal"],
+        "forbid": []
+    },
+    {
+        "note": "mate-legal negative: a smothered knight mate",
+        "fen": "6rk/6pp/8/6N1/8/8/8/6K1 w - - 0 1",
+        "move": "Nf7#",
+        "line": [],
+        "expect": ["mate-smothered"],
+        "forbid": ["mate-legal"]
+    },
+    {
+        "note": "mate-epaulette: Qe6#",
+        "fen": "3rkr2/pp4pp/8/8/8/1Q6/PP3PPP/6K1 w - - 0 1",
+        "move": "Qe6#",
+        "line": [],
+        "expect": ["mate-epaulette"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "mate-epaulette",
+                "ply": 0,
+                "piece": "Q",
+                "square": "e6",
+                "targets": "k",
+                "pieces": ["e6", "d8", "f8", "e8"],
+                "squares": ["e8"],
+                "arrows": ["e6-e8:attack"]
+            }
+        ]
+    },
+    {
+        "note": "mate-epaulette: Qd6#",
+        "fen": "2rkr3/pp4pp/8/8/1Q6/8/PP3PPP/6K1 w - - 0 1",
+        "move": "Qd6#",
+        "line": [],
+        "expect": ["mate-epaulette"],
+        "forbid": []
+    },
+    {
+        "note": "mate-epaulette: Qe6# (mirrored)",
+        "fen": "6k1/pp3ppp/1q6/8/8/8/PP4PP/3RKR2 b - - 0 1",
+        "move": "Qe3#",
+        "line": [],
+        "expect": ["mate-epaulette"],
+        "forbid": []
+    },
+    {
+        "note": "mate-epaulette negative: one rook beside the king, the bishop holds d8",
+        "fen": "4kr2/pp4pp/8/6B1/8/1Q6/PP3PPP/6K1 w - - 0 1",
+        "move": "Qe6#",
+        "line": [],
+        "expect": [],
+        "forbid": ["mate-epaulette"]
+    },
+    {
+        "note": "mate-greco negative: Anastasia",
+        "fen": "8/pp2Nppk/8/8/8/3R4/PP3PPP/6K1 w - - 0 1",
+        "move": "Rh3#",
+        "line": [],
+        "expect": [],
+        "forbid": ["mate-greco"]
+    },
+    {
+        "note": "mate-anastasia negative: Greco",
+        "fen": "7k/pp4p1/8/8/2B5/3R4/PP3PPP/6K1 w - - 0 1",
+        "move": "Rh3#",
+        "line": [],
+        "expect": [],
+        "forbid": ["mate-anastasia"]
+    },
+    {
+        "note": "mate-damiano: Qh7#",
+        "fen": "5rk1/pp3p2/6P1/7Q/8/8/PP3PPP/6K1 w - - 0 1",
+        "move": "Qh7#",
+        "line": [],
+        "expect": ["mate-damiano"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "mate-damiano",
+                "ply": 0,
+                "piece": "Q",
+                "square": "h7",
+                "targets": "k",
+                "pieces": ["h7", "g6", "g8"],
+                "squares": ["g8"],
+                "arrows": ["h7-g8:attack"]
+            }
+        ]
+    },
+    {
+        "note": "mate-damiano: Qa7#",
+        "fen": "1kr5/2p5/1P6/Q7/8/8/5PPP/6K1 w - - 0 1",
+        "move": "Qa7#",
+        "line": [],
+        "expect": ["mate-damiano"],
+        "forbid": []
+    },
+    {
+        "note": "mate-damiano: Qh7# (mirrored)",
+        "fen": "6k1/pp3ppp/8/8/7q/6p1/PP3P2/5RK1 b - - 0 1",
+        "move": "Qh2#",
+        "line": [],
+        "expect": ["mate-damiano"],
+        "forbid": []
+    },
+    {
+        "note": "mate-damiano negative: the queen is held by a bishop",
+        "fen": "5rk1/pp3ppp/5n2/8/4P3/3B3Q/PP3PPP/6K1 w - - 0 1",
+        "move": "e5",
+        "line": ["Nd5", "Qxh7#"],
+        "expect": [],
+        "forbid": ["mate-damiano"]
+    },
+    {
+        "note": "mate-ladder: Rh1#",
+        "fen": "8/8/8/8/7k/2K5/6R1/R7 w - - 0 1",
+        "move": "Rh1#",
+        "line": [],
+        "expect": ["mate-ladder"],
+        "forbid": ["mate-corridor"]
+    },
+    {
+        "note": "mate-ladder: Rb8#",
+        "fen": "4k3/Q7/8/8/8/8/8/1R4K1 w - - 0 1",
+        "move": "Rb8#",
+        "line": [],
+        "expect": ["mate-ladder"],
+        "forbid": ["mate-back-rank"]
+    },
+    {
+        "note": "mate-ladder: Rh1# (mirrored)",
+        "fen": "r7/6r1/2k5/7K/8/8/8/8 b - - 0 1",
+        "move": "Rh8#",
+        "line": [],
+        "expect": ["mate-ladder"],
+        "forbid": ["mate-corridor"]
+    },
+    {
+        "note": "mate-ladder negative: the back rank",
+        "fen": "6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1",
+        "move": "Rd8#",
+        "line": [],
+        "expect": [],
+        "forbid": ["mate-ladder"]
+    },
+    {
+        "note": "mate-corridor: Rh1#",
+        "fen": "8/8/6p1/6pk/6p1/2K5/8/R7 w - - 0 1",
+        "move": "Rh1#",
+        "line": [],
+        "expect": ["mate-corridor"],
+        "forbid": ["mate-ladder", "mate-back-rank"],
+        "draw": [
+            {
+                "key": "mate-corridor",
+                "ply": 0,
+                "piece": "R",
+                "square": "h1",
+                "targets": "k",
+                "pieces": ["h1", "h5"],
+                "squares": ["h5"],
+                "arrows": ["h1-h5:attack"]
+            }
+        ]
+    },
+    {
+        "note": "mate-corridor: Ra1# along the a-file",
+        "fen": "7K/8/1p6/kp6/1p6/8/8/7R w - - 0 1",
+        "move": "Ra1#",
+        "line": [],
+        "expect": ["mate-corridor"],
+        "forbid": []
+    },
+    {
+        "note": "mate-corridor: Rh1# (mirrored)",
+        "fen": "r7/8/2k5/6P1/6PK/6P1/8/8 b - - 0 1",
+        "move": "Rh8#",
+        "line": [],
+        "expect": ["mate-corridor"],
+        "forbid": ["mate-ladder", "mate-back-rank"]
+    },
+    {
+        "note": "mate-corridor negative: the back rank",
+        "fen": "3r2k1/5ppp/8/8/8/8/5PPP/6K1 b - - 0 1",
+        "move": "Rd1#",
+        "line": [],
+        "expect": [],
+        "forbid": ["mate-corridor"]
+    },
+    {
+        "note": "outpost: Nd5",
+        "fen": "6k1/pp3ppp/3p4/4p3/4P3/2N5/PP3PPP/6K1 w - - 0 1",
+        "move": "Nd5",
+        "line": [],
+        "expect": ["outpost"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "outpost",
+                "ply": 0,
+                "piece": "N",
+                "square": "d5",
+                "targets": "",
+                "pieces": ["d5"],
+                "squares": ["d5"],
+                "arrows": ["c3-d5:best"]
+            }
+        ]
+    },
+    {
+        "note": "outpost: Nf5",
+        "fen": "6k1/pp3p1p/3p4/4p3/4P3/6N1/PP3PPP/6K1 w - - 0 1",
+        "move": "Nf5",
+        "line": [],
+        "expect": ["outpost"],
+        "forbid": []
+    },
+    {
+        "note": "outpost: Nd5 (mirrored)",
+        "fen": "6k1/pp3ppp/2n5/4p3/4P3/3P4/PP3PPP/6K1 b - - 0 1",
+        "move": "Nd4",
+        "line": [],
+        "expect": ["outpost"],
+        "forbid": []
+    },
+    {
+        "note": "outpost negative: c7 can still chase it",
+        "fen": "6k1/ppp2ppp/3p4/4p3/4P3/2N5/PP3PPP/6K1 w - - 0 1",
+        "move": "Nd5",
+        "line": [],
+        "expect": [],
+        "forbid": ["outpost"]
+    },
+    {
+        "note": "weak-square: g6 leaves h6",
+        "fen": "5bk1/pp2pppp/8/5N2/8/4B3/PP3PPP/6K1 b - - 0 1",
+        "move": "g6",
+        "line": [],
+        "expect": ["weak-square"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "weak-square",
+                "ply": 0,
+                "piece": "p",
+                "square": "h6",
+                "targets": "",
+                "pieces": ["g6"],
+                "squares": ["h6"],
+                "arrows": []
+            }
+        ]
+    },
+    {
+        "note": "weak-square: e4 leaves d4",
+        "fen": "6k1/pp3ppp/2n5/2b5/8/4PN2/PP3PPP/6K1 w - - 0 1",
+        "move": "e4",
+        "line": [],
+        "expect": ["weak-square"],
+        "forbid": []
+    },
+    {
+        "note": "weak-square: g6 leaves h6 (mirrored)",
+        "fen": "6k1/pp3ppp/4b3/8/5n2/8/PP2PPPP/5BK1 w - - 0 1",
+        "move": "g3",
+        "line": [],
+        "expect": ["weak-square"],
+        "forbid": []
+    },
+    {
+        "note": "weak-square negative: nobody eyes h6",
+        "fen": "5bk1/pp2pppp/8/8/8/8/PP3PPP/6K1 b - - 0 1",
+        "move": "g6",
+        "line": [],
+        "expect": [],
+        "forbid": ["weak-square"]
+    },
+    {
+        "note": "open-file: Rd1",
+        "fen": "6k1/pp3ppp/8/8/8/8/PP3PPP/5RK1 w - - 0 1",
+        "move": "Rd1",
+        "line": [],
+        "expect": ["open-file"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "open-file",
+                "ply": 0,
+                "piece": "R",
+                "square": "d1",
+                "targets": "",
+                "pieces": ["d1"],
+                "squares": ["d1"],
+                "arrows": []
+            }
+        ]
+    },
+    {
+        "note": "open-file: cxd5 opens the c-file",
+        "fen": "6k1/pp3pp1/4p2p/3p4/2P5/8/PP3PPP/2R3K1 w - - 0 1",
+        "move": "cxd5",
+        "line": ["exd5"],
+        "expect": ["open-file", "isolated-pawn"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "isolated-pawn",
+                "ply": 0,
+                "piece": "p",
+                "square": "d5",
+                "targets": "",
+                "pieces": ["d5"],
+                "squares": ["d5"],
+                "arrows": []
+            }
+        ]
+    },
+    {
+        "note": "open-file: Rd1 (mirrored)",
+        "fen": "5rk1/pp3ppp/8/8/8/8/PP3PPP/6K1 b - - 0 1",
+        "move": "Rd8",
+        "line": [],
+        "expect": ["open-file"],
+        "forbid": []
+    },
+    {
+        "note": "open-file negative: no pawns on the board, every file is open (K+R+N v K)",
+        "fen": "8/8/8/4k3/8/8/2N5/R3K3 w - - 0 1",
+        "move": "Rd1",
+        "line": [],
+        "expect": [],
+        "forbid": ["open-file"]
+    },
+    {
+        "note": "open-file negative: K+R v K for Black, the rook takes a file of a board without pawns",
+        "fen": "5rk1/8/8/8/8/8/8/6K1 b - - 0 1",
+        "move": "Rd8",
+        "line": [],
+        "expect": [],
+        "forbid": ["open-file"]
+    },
+    {
+        "note": "open-file negative: a half-open file",
+        "fen": "6k1/pp1p1ppp/8/8/8/8/PP3PPP/5RK1 w - - 0 1",
+        "move": "Rd1",
+        "line": [],
+        "expect": [],
+        "forbid": ["open-file", "isolated-pawn"]
+    },
+    {
+        "note": "isolated-pawn: bxc5 dxc5 isolates c5",
+        "fen": "6k1/p4ppp/3p4/2p5/1P6/8/P4PPP/6K1 w - - 0 1",
+        "move": "bxc5",
+        "line": ["dxc5"],
+        "expect": ["isolated-pawn"],
+        "forbid": []
+    },
+    {
+        "note": "isolated-pawn: exd4 takes an isolani",
+        "fen": "6k1/pp3ppp/4p3/8/3p4/4P3/PP3PPP/6K1 w - - 0 1",
+        "move": "exd4",
+        "line": [],
+        "expect": ["isolated-pawn"],
+        "forbid": []
+    },
+    {
+        "note": "isolated-pawn: bxc5 dxc5 isolates c5 (mirrored)",
+        "fen": "6k1/p4ppp/8/1p6/2P5/3P4/P4PPP/6K1 b - - 0 1",
+        "move": "bxc4",
+        "line": ["dxc4"],
+        "expect": ["isolated-pawn"],
+        "forbid": []
+    },
+    {
+        "note": "passed-pawn-created: cxb5",
+        "fen": "6k1/6pp/8/1p6/2P5/8/P5PP/6K1 w - - 0 1",
+        "move": "cxb5",
+        "line": [],
+        "expect": ["passed-pawn-created"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "passed-pawn-created",
+                "ply": 0,
+                "piece": "P",
+                "square": "b5",
+                "targets": "",
+                "pieces": ["b5"],
+                "squares": ["b5"],
+                "arrows": []
+            }
+        ]
+    },
+    {
+        "note": "passed-pawn-created: the b6 breakthrough",
+        "fen": "6k1/ppp5/8/PPP5/8/8/8/6K1 w - - 0 1",
+        "move": "b6",
+        "line": ["cxb6", "a6", "bxa6", "c6"],
+        "expect": ["passed-pawn-created"],
+        "forbid": []
+    },
+    {
+        "note": "passed-pawn-created: cxb5 (mirrored)",
+        "fen": "6k1/p5pp/8/2p5/1P6/8/6PP/6K1 b - - 0 1",
+        "move": "cxb4",
+        "line": [],
+        "expect": ["passed-pawn-created"],
+        "forbid": []
+    },
+    {
+        "note": "passed-pawn-created negative: 1.e4",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "move": "e4",
+        "line": [],
+        "expect": [],
+        "forbid": ["passed-pawn-created", "isolated-pawn", "weak-square", "pawn-break", "minority-attack", "prophylaxis"]
+    },
+    {
+        "note": "minority-attack: b5",
+        "fen": "r4rk1/pp3ppp/2p1bn2/3p4/1P1P4/2N1PN2/P4PPP/R4RK1 w - - 0 14",
+        "move": "b5",
+        "line": [],
+        "expect": ["minority-attack"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "minority-attack",
+                "ply": 0,
+                "piece": "P",
+                "square": "b5",
+                "targets": "",
+                "pieces": ["b5"],
+                "squares": ["b5"],
+                "arrows": ["b4-b5:idea"]
+            }
+        ]
+    },
+    {
+        "note": "minority-attack: b4",
+        "fen": "r4rk1/pp3ppp/2p1bn2/3p4/3P4/2N1PN2/PP3PPP/R4RK1 w - - 0 13",
+        "move": "b4",
+        "line": [],
+        "expect": ["minority-attack"],
+        "forbid": []
+    },
+    {
+        "note": "minority-attack: b5 (mirrored)",
+        "fen": "r4rk1/p4ppp/2n1pn2/1p1p4/3P4/2P1BN2/PP3PPP/R4RK1 b - - 0 14",
+        "move": "b4",
+        "line": [],
+        "expect": ["minority-attack"],
+        "forbid": []
+    },
+    {
+        "note": "minority-attack negative: no pieces left",
+        "fen": "6k1/pp3ppp/2p5/3p4/1P1P4/4P3/P4PPP/6K1 w - - 0 1",
+        "move": "b5",
+        "line": [],
+        "expect": [],
+        "forbid": ["minority-attack"]
+    },
+    {
+        "note": "pawn-break: ...c5 against d4",
+        "fen": "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3",
+        "move": "c5",
+        "line": [],
+        "expect": ["pawn-break"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "pawn-break",
+                "ply": 0,
+                "piece": "p",
+                "square": "c5",
+                "targets": "P",
+                "pieces": ["c5", "d4"],
+                "squares": ["d4"],
+                "arrows": ["c5-d4:attack"]
+            }
+        ]
+    },
+    {
+        "note": "pawn-break: ...f5 against e4",
+        "fen": "rnbq1rk1/ppp1npbp/3p2p1/3Pp3/2P1P3/2N2P2/PP4PP/R1BQKBNR b KQ - 0 8",
+        "move": "f5",
+        "line": [],
+        "expect": ["pawn-break"],
+        "forbid": []
+    },
+    {
+        "note": "pawn-break: e4 against d5",
+        "fen": "r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2NBPN2/PP3PPP/R2QK2R w KQ - 0 8",
+        "move": "e4",
+        "line": [],
+        "expect": ["pawn-break"],
+        "forbid": []
+    },
+    {
+        "note": "pawn-break: ...c5 against d4 (mirrored)",
+        "fen": "rnbqkbnr/ppp2ppp/8/3p4/3Pp3/4P3/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+        "move": "c4",
+        "line": [],
+        "expect": ["pawn-break"],
+        "forbid": []
+    },
+    {
+        "note": "pawn-break negative: 1...d5",
+        "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+        "move": "d5",
+        "line": [],
+        "expect": [],
+        "forbid": ["pawn-break"]
+    },
+    {
+        "note": "prophylaxis: h3 against ...Bg4",
+        "fen": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 w kq - 0 6",
+        "move": "h3",
+        "line": [],
+        "expect": ["prophylaxis"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "prophylaxis",
+                "ply": 0,
+                "piece": "P",
+                "square": "h3",
+                "targets": "b",
+                "pieces": ["h3", "c8"],
+                "squares": ["g4"],
+                "arrows": ["h2-h3:best", "c8-g4:threat"]
+            }
+        ]
+    },
+    {
+        "note": "prophylaxis: ...a6 against Bb5",
+        "fen": "r1bqkbnr/ppp2ppp/2np4/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 3",
+        "move": "a6",
+        "line": [],
+        "expect": ["prophylaxis"],
+        "forbid": []
+    },
+    {
+        "note": "prophylaxis: a3 against ...Bb4",
+        "fen": "rnbqkb1r/pppp1ppp/4pn2/8/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 3",
+        "move": "a3",
+        "line": [],
+        "expect": ["prophylaxis"],
+        "forbid": []
+    },
+    {
+        "note": "prophylaxis: h3 against ...Bg4 (mirrored)",
+        "fen": "rnbq1rk1/pp3ppp/2pp1n2/2b1p3/2B1P3/2NP1N2/PPP2PPP/R1BQK2R b KQ - 0 6",
+        "move": "h6",
+        "line": [],
+        "expect": ["prophylaxis"],
+        "forbid": []
+    },
+    {
+        "note": "prophylaxis negative: 1.a3",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "move": "a3",
+        "line": [],
+        "expect": [],
+        "forbid": ["prophylaxis"]
+    },
+    {
+        "note": "piece-improvement: Nf4 from the rim",
+        "fen": "6k1/pp3ppp/8/8/8/7N/PP3PPP/6K1 w - - 0 1",
+        "move": "Nf4",
+        "line": [],
+        "expect": ["piece-improvement"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "piece-improvement",
+                "ply": 0,
+                "piece": "N",
+                "square": "f4",
+                "targets": "",
+                "pieces": ["f4"],
+                "squares": ["f4"],
+                "arrows": ["h3-f4:best"]
+            }
+        ]
+    },
+    {
+        "note": "piece-improvement: Ng3 out of the corner",
+        "fen": "6k1/pp3ppp/8/8/8/8/PP3PP1/6KN w - - 0 1",
+        "move": "Ng3",
+        "line": [],
+        "expect": ["piece-improvement"],
+        "forbid": []
+    },
+    {
+        "note": "piece-improvement negative: Nc5 is an attack on b7",
+        "fen": "6k1/pp3ppp/8/8/N7/8/PP3PPP/6K1 w - - 0 1",
+        "move": "Nc5",
+        "line": [],
+        "expect": [],
+        "forbid": ["piece-improvement"]
+    },
+    {
+        "note": "piece-improvement: Nf5 from h4",
+        "fen": "6k1/pp3ppp/8/8/7N/8/PP3PPP/6K1 w - - 0 1",
+        "move": "Nf5",
+        "line": [],
+        "expect": ["piece-improvement"],
+        "forbid": []
+    },
+    {
+        "note": "piece-improvement: Nf4 from the rim (mirrored)",
+        "fen": "6k1/pp3ppp/7n/8/8/8/PP3PPP/6K1 b - - 0 1",
+        "move": "Nf5",
+        "line": [],
+        "expect": ["piece-improvement"],
+        "forbid": []
+    },
+    {
+        "note": "piece-improvement negative: Nac2 changes little",
+        "fen": "r1bq1rk1/pp2ppbp/2np1np1/8/3NP3/N1P1B3/PP2BPPP/R2QK2R w KQ - 0 9",
+        "move": "Nac2",
+        "line": [],
+        "expect": [],
+        "forbid": ["piece-improvement"]
+    },
+    {
+        "note": "piece-improvement negative: development from home",
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "move": "Nf3",
+        "line": [],
+        "expect": [],
+        "forbid": ["piece-improvement"]
+    },
+    {
+        "note": "king-activation: Kf1",
+        "fen": "6k1/5ppp/8/8/8/8/5PPP/6K1 w - - 0 1",
+        "move": "Kf1",
+        "line": [],
+        "expect": ["king-activation"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "king-activation",
+                "ply": 0,
+                "piece": "K",
+                "square": "f1",
+                "targets": "",
+                "pieces": ["f1"],
+                "squares": ["f1"],
+                "arrows": ["g1-f1:best"]
+            }
+        ]
+    },
+    {
+        "note": "king-activation: Kd7 in a rook ending",
+        "fen": "4k3/r4ppp/8/8/8/8/5PPP/1R4K1 b - - 0 1",
+        "move": "Kd7",
+        "line": [],
+        "expect": ["king-activation"],
+        "forbid": []
+    },
+    {
+        "note": "king-activation: Kc4 toward the pawn",
+        "fen": "6k1/8/1p6/8/8/3K4/8/8 w - - 0 1",
+        "move": "Kc4",
+        "line": [],
+        "expect": ["king-activation"],
+        "forbid": ["opposition"]
+    },
+    {
+        "note": "king-activation negative: a middlegame king move",
+        "fen": "r4rk1/pp3ppp/2p1bn2/3p4/1P1P4/2N1PN2/P4PPP/R4RK1 w - - 0 14",
+        "move": "Kh1",
+        "line": [],
+        "expect": [],
+        "forbid": ["king-activation"]
+    },
+    {
+        "note": "opposition: Kd4",
+        "fen": "8/8/3k4/8/8/3KP3/8/8 w - - 0 1",
+        "move": "Kd4",
+        "line": [],
+        "expect": ["opposition"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "opposition",
+                "ply": 0,
+                "piece": "K",
+                "square": "d4",
+                "targets": "k",
+                "pieces": ["d4", "d6"],
+                "squares": ["d4", "d6"],
+                "arrows": []
+            }
+        ]
+    },
+    {
+        "note": "opposition: distant, Ke3",
+        "fen": "8/4k2p/8/8/8/8/P3K3/8 w - - 0 1",
+        "move": "Ke3",
+        "line": [],
+        "expect": ["opposition"],
+        "forbid": []
+    },
+    {
+        "note": "opposition: diagonal, Kc3",
+        "fen": "8/8/8/4k3/8/8/1K2P3/8 w - - 0 1",
+        "move": "Kc3",
+        "line": [],
+        "expect": ["opposition"],
+        "forbid": []
+    },
+    {
+        "note": "opposition: Kd4 (mirrored)",
+        "fen": "8/8/3kp3/8/8/3K4/8/8 b - - 0 1",
+        "move": "Kd5",
+        "line": [],
+        "expect": ["opposition"],
+        "forbid": []
+    },
+    {
+        "note": "opposition negative: an even gap",
+        "fen": "8/8/3k4/8/8/4P3/2K5/8 w - - 0 1",
+        "move": "Kd3",
+        "line": [],
+        "expect": [],
+        "forbid": ["opposition"]
+    },
+    {
+        "note": "triangulation: d3-d2-c3-d3",
+        "fen": "8/8/2k5/2p5/2P5/3K4/8/8 w - - 0 1",
+        "move": "Kd2",
+        "line": ["Kd6", "Kc3", "Kc6", "Kd3"],
+        "expect": ["triangulation"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "triangulation",
+                "ply": 0,
+                "piece": "K",
+                "square": "d3",
+                "targets": "",
+                "pieces": ["d3"],
+                "squares": ["d3", "d2", "c3"],
+                "arrows": ["d3-d2:idea", "d2-c3:idea", "c3-d3:idea"]
+            }
+        ]
+    },
+    {
+        "note": "triangulation: c3-c2-b2-c3",
+        "fen": "8/8/8/3k4/8/2K5/3P4/8 w - - 0 1",
+        "move": "Kc2",
+        "line": ["Ke5", "Kb2", "Kd5", "Kc3"],
+        "expect": ["triangulation"],
+        "forbid": []
+    },
+    {
+        "note": "triangulation: d3-d2-c3-d3 (mirrored)",
+        "fen": "8/8/3k4/2p5/2P5/2K5/8/8 b - - 0 1",
+        "move": "Kd7",
+        "line": ["Kd3", "Kc6", "Kc3", "Kd6"],
+        "expect": ["triangulation"],
+        "forbid": []
+    },
+    {
+        "note": "triangulation negative: back and forth",
+        "fen": "8/8/2k5/2p5/2P5/3K4/8/8 w - - 0 1",
+        "move": "Kd2",
+        "line": ["Kd6", "Kd3", "Kc6", "Kd2"],
+        "expect": [],
+        "forbid": ["triangulation"]
+    },
+    {
+        "note": "zugzwang: Ke4 takes the opposition, Black must give way",
+        "fen": "8/8/4k3/8/3K4/4P3/8/8 w - - 0 1",
+        "move": "Ke4",
+        "line": [],
+        "expect": ["zugzwang", "opposition"],
+        "forbid": [],
+        "search": "kpk",
+        "draw": [
+            {
+                "key": "zugzwang",
+                "ply": 0,
+                "piece": "K",
+                "square": "e4",
+                "targets": "",
+                "pieces": ["e4"],
+                "squares": ["e6"],
+                "arrows": []
+            }
+        ]
+    },
+    {
+        "note": "zugzwang: Ke4 from d3",
+        "fen": "8/8/4k3/8/8/3KP3/8/8 w - - 0 1",
+        "move": "Ke4",
+        "line": [],
+        "expect": ["zugzwang"],
+        "forbid": [],
+        "search": "kpk"
+    },
+    {
+        "note": "zugzwang: Ke4 takes the opposition, Black must give way (mirrored)",
+        "fen": "8/8/4p3/3k4/8/4K3/8/8 b - - 0 1",
+        "move": "Ke5",
+        "line": [],
+        "expect": ["zugzwang", "opposition"],
+        "forbid": [],
+        "search": "kpk"
+    },
+    {
+        "note": "zugzwang negative: Ke6 wins whoever is to move",
+        "fen": "4k3/8/8/3KP3/8/8/8/8 w - - 0 1",
+        "move": "Ke6",
+        "line": [],
+        "expect": [],
+        "forbid": ["zugzwang"],
+        "search": "kpk"
+    },
+    {
+        "note": "zugzwang negative: no search, no zugzwang",
+        "fen": "8/8/4k3/8/3K4/4P3/8/8 w - - 0 1",
+        "move": "Ke4",
+        "line": [],
+        "expect": [],
+        "forbid": ["zugzwang"]
+    },
+    {
+        "note": "fortress: the king reaches the corner of the wrong bishop",
+        "fen": "8/5k2/8/3K3P/4B3/8/8/8 b - - 0 1",
+        "move": "Kg8",
+        "line": [],
+        "expect": ["fortress"],
+        "forbid": [],
+        "draw": [
+            {
+                "key": "fortress",
+                "ply": 0,
+                "piece": "k",
+                "square": "g8",
+                "targets": "",
+                "pieces": ["g8"],
+                "squares": ["g8"],
+                "arrows": []
+            }
+        ]
+    },
+    {
+        "note": "fortress: Nxa4, knight against rook",
+        "fen": "6k1/8/8/8/P7/2n5/8/3R1K2 b - - 0 1",
+        "move": "Nxa4",
+        "line": [],
+        "expect": ["fortress"],
+        "forbid": []
+    },
+    {
+        "note": "fortress: Bxa4, rook against bishop",
+        "fen": "6k1/8/2b5/8/P7/8/8/3R1K2 b - - 0 1",
+        "move": "Bxa4",
+        "line": [],
+        "expect": ["fortress"],
+        "forbid": []
+    },
+    {
+        "note": "fortress negative: Kxh4 leaves a lone knight, a draw by material",
+        "fen": "8/8/8/8/2K3kP/2N5/8/8 b - - 0 1",
+        "move": "Kxh4",
+        "line": [],
+        "expect": [],
+        "forbid": ["fortress"]
+    },
+    {
+        "note": "fortress negative: the king walks away",
+        "fen": "8/5k2/8/3K3P/4B3/8/8/8 b - - 0 1",
+        "move": "Ke7",
+        "line": [],
+        "expect": [],
+        "forbid": ["fortress"]
+    }
+]

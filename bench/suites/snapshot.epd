@@ -1,0 +1,85 @@
+# snapshot.epd — the corpus of bench/snapshot.mjs: 60 positions that the golden record (bench/golden.json) hashes.
+# A line: the FEN; the move explainMove is asked about (SAN, or - when the position is over); the record id; an optional note.
+# How it was chosen: six groups that together reach most of the explanation code, each a fixed share of the 60.
+#   open  (10)  the first moves of mainline systems (e4, d4, Ruy Lopez, Najdorf, QGD, Nimzo, KID, Caro-Kann, English), where the opening name speaks.
+#   tact  (15)  Win at Chess positions taken evenly through bench/suites/wac.epd (about every 18th position that has a single best move), asked with the suite's move.
+#   quiet (10)  maneuvering positions 8 to 12 moves into mainline systems, with no tactic on the board, so the positional terms and plans speak.
+#   end   (10)  nine tablebase-sized endgames of 3 to 5 pieces, won, drawn and tricky (KQK, KRK, KPK, KBNK, KQKR, KRKB, Lucena, wrong bishop, KNNK), and one
+#               pawn ending of 8 pieces (end-04) that no table covers, so the search-side endgame terms (passed and protected pawns, king activity) speak.
+#   mate, sac, blun (10)  moves that explainMove meets: a missed mate in 1 (mate-01), the mate in 1 itself (Scholar's, smothered), a mate in 2 asked by its quiet
+#               key move (mate-02), sound and unsound sacrifices, and two real blunders (blun-02 allows a mate in 1, blun-03 loses the queen).
+#   term  (5)   positions that are over: two checkmates, a stalemate, the fifty-move rule, insufficient material.
+# The opening, quiet and sacrifice positions were made by playing SAN lines of well-known games through the engine's own Game, so every FEN is legal.
+# Changing a line changes its hashes: edit this file only together with 'npm run snapshot:update'.
+
+# Openings (10): the first moves of mainline systems; the asked move is the usual next one.
+rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1; e4; open-01
+rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1; d4; open-02
+rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2; Nf3; open-03
+rnbqkb1r/1p2pppp/p2p1n2/8/3NP3/2N5/PPP2PPP/R1BQKB1R w KQkq - 0 6; Be3; open-04
+rnbqkb1r/ppp2ppp/4pn2/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4; Bg5; open-05
+r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 5; O-O; open-06
+rnbqk1nr/ppp2ppp/4p3/3p4/1b1PP3/2N5/PPP2PPP/R1BQKBNR w KQkq - 2 4; e5; open-07
+rnbqk2r/ppppppbp/5np1/8/2P5/2N2N2/PP1PPPPP/R1BQKB1R w KQkq - 2 4; e4; open-08
+rnbq1rk1/ppp2ppp/4pn2/3p4/1bPP4/2NBP3/PP3PPP/R1BQK1NR w KQ - 0 6; Nf3; open-09
+rn1qkbnr/pp2pppp/2p5/5b2/3PN3/8/PPP2PPP/R1BQKBNR w KQkq - 1 5; Ng3; open-10
+
+# Middlegame tactics (15): Win at Chess positions (bench/suites/wac.epd), the asked move is the suite's best move.
+r1bq2rk/pp3pbp/2p1p1pQ/7P/3P4/2PB1N2/PP3PPR/2KR4 w - - 0 1; Qxh7; tact-01; WAC.004
+5rk1/1b3p1p/pp3p2/3n1N2/1P6/P1qB1PP1/3Q3P/4R1K1 w - - 0 1; Qh6; tact-02; WAC.021
+3rb1k1/pq3pbp/4n1p1/3p4/2N5/2P2QB1/PP3PPP/1B1R2K1 b - - 0 1; dxc4; tact-03; WAC.044
+6r1/3Pn1qk/p1p1P1rp/2Q2p2/2P5/1P4P1/P3R2P/5RK1 b - - 0 1; Rxg3; tact-04; WAC.062
+r4rk1/p1B1bpp1/1p2pn1p/8/2PP4/3B1P2/qP2QP1P/3R1RK1 w - - 0 1; Ra1; tact-05; WAC.080
+1r3rk1/5pb1/p2p2p1/Q1n1q2p/1NP1P3/3p1P1B/PP1R3P/1K2R3 b - - 0 1; Nxe4; tact-06; WAC.098
+3r1rk1/q4ppp/p1Rnp3/8/1p6/1N3P2/PP3QPP/3R2K1 b - - 0 1; Ne4; tact-07; WAC.117
+3b1rk1/1bq3pp/5pn1/1p2rN2/2p1p3/2P1B2Q/1PB2PPP/R2R2K1 w - - 0 1; Rd7; tact-08; WAC.137
+5rk1/n1p1R1bp/p2p4/1qpP1QB1/7P/2P3P1/PP3P2/6K1 w - - 0 1; Rxg7; tact-09; WAC.158
+r5k1/pppb3p/2np1n2/8/3PqNpP/3Q2P1/PPP5/R4RK1 w - - 0 1; Nh5; tact-10; WAC.175
+r3k3/ppp2Npp/4Bn2/2b5/1n1pp3/N4P2/PPP3qP/R2QKR2 b Qq - 0 1; Nd3; tact-11; WAC.192
+3r1rk1/pp1q1ppp/3pn3/2pN4/5PP1/P5PQ/1PP1B3/1K1R4 w - - 0 1; Rh1; tact-12; WAC.210
+2b5/1r6/2kBp1p1/p2pP1P1/2pP4/1pP3K1/1R3P2/8 b - - 0 1; Rb4; tact-13; WAC.230
+1b5k/7P/p1p2np1/2P2p2/PP3P2/4RQ1R/q2r3P/6K1 w - - 0 1; Re8; tact-14; WAC.250
+2r1r1k1/pp1q1ppp/3p1b2/3P4/3Q4/5N2/PP2RPPP/4R1K1 w - - 0 1; Qg4; tact-15; WAC.270
+
+# Quiet middlegames (10): maneuvering positions of mainline systems after 8-12 moves, no tactic on the board.
+r1bq1rk1/2pnbppp/p2p1n2/1p2p3/3PP3/1BP2N1P/PP3PP1/RNBQR1K1 w - - 1 11; c4; quiet-01
+rnb2rk1/p1p1qpp1/1p5p/3p4/3P4/4PN2/PP3PPP/R2QKB1R w KQ - 0 11; Rc1; quiet-02
+r2qk2r/pp1n1ppp/2p1pn2/5b2/PbBP4/2N1PN2/1P3PPP/R1BQ1RK1 w kq - 3 9; Qe2; quiet-03
+r1bq1rk1/pppnnpbp/3p2p1/3Pp3/2P1P3/2N5/PP2BPPP/R1BQNRK1 w - - 3 10; Be3; quiet-04
+r2qkb1r/pp1nnppp/4p3/2ppPb2/3P4/2P1BN2/PP2BPPP/RN1Q1RK1 b kq - 0 8; Nc6; quiet-05
+r1bq1rk1/ppp1bppp/1nn5/4p3/8/2NP1NP1/PP2PPBP/R1BQ1RK1 w - - 1 9; a3; quiet-06
+r1bqk2r/pp4pp/2nbpn2/3p4/3P4/3B4/PP1NNPPP/R1BQ1RK1 w kq - 2 11; Nf3; quiet-07
+r1b2rk1/ppq2ppp/2n1pn2/2p5/2BP4/P1P1PN2/5PPP/R1BQ1RK1 w - - 1 11; Bd3; quiet-08
+r2q1rk1/bpp2ppp/p1npbn2/4p3/4P3/1BPP1N2/PP1N1PPP/R1BQR1K1 w - - 4 10; h3; quiet-09
+rn2kb1r/pp3ppp/2p1pn2/q4b2/2BP4/2N2N2/PPPBQPPP/R3K2R b KQkq - 1 8; Bb4; quiet-10
+
+# Endgames (10): tablebase-sized positions (3 to 5 pieces), won, drawn and tricky; the asked move is a natural one.
+8/8/8/4k3/8/8/3Q4/4K3 w - - 0 1; Qd3; end-01
+8/8/8/8/3k4/8/8/R3K3 w - - 0 1; Ra4+; end-02
+8/8/8/3k4/8/3K4/3P4/8 w - - 0 1; Ke3; end-03
+8/p7/1p2k3/2p5/P1P1K3/1P6/8/8 w - - 0 1; Kd3; end-04
+8/8/8/7k/8/8/8/K1BN4 w - - 0 1; Nf2; end-05
+8/8/8/8/2k5/8/1r6/K6Q w - - 0 1; Qh4+; end-06
+1K1k4/1P6/8/8/8/8/r7/2R5 w - - 0 1; Rc4; end-07
+8/8/8/4k3/8/2N1N3/8/K7 w - - 0 1; Ncd5; end-08
+7k/8/6K1/7P/8/8/8/5B2 w - - 0 1; Bd3; end-09
+8/8/4k3/8/8/3b4/8/R3K3 w - - 0 1; Ra6+; end-10
+
+# Blunders, mates and sacrifices (10): explainMove meets a missed mate, a mate, a sound or unsound sacrifice and a plain blunder.
+6k1/5ppp/8/8/8/8/5PPP/R5K1 w - - 0 1; Ra7; mate-01
+2rr3k/pp3pp1/1nnqbN1p/3pN3/2pP4/2P3Q1/PPB4P/R4RK1 w - - 0 1; Qg6; mate-02; WAC.001, the quiet key move of a mate in 2
+r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4; Qxf7#; mate-03
+r1bqkb1r/ppp2ppp/2n5/3np1N1/2B5/8/PPPP1PPP/RNBQK2R w KQkq - 0 6; Nxf7; sac-01
+r1bqkb1r/pppn1ppp/5n2/3p2B1/3P4/2N5/PP2PPPP/R2QKBNR w KQkq - 0 6; Nxd5; blun-01
+6rk/6pp/8/6N1/8/8/8/6K1 w - - 0 1; Nf7#; mate-04
+rn1qkbnr/ppp2p1p/3p2p1/4N3/2B1P3/2N5/PPPP1PPP/R1BbK2R w KQkq - 0 6; Bxf7+; sac-02
+r1b1kbnr/pppp1ppp/8/4N1q1/2BnP3/8/PPPP1PPP/RNBQK2R w KQkq - 1 5; Nxf7; sac-03
+rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2; g4; blun-02; allows Qh4#
+r1bqkb1r/pppp1p1p/2n2np1/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 2 5; Qxf6; blun-03
+
+# Terminal positions (5): checkmate (two), stalemate, the fifty-move rule and insufficient material; no move is asked (-).
+rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3; -; term-01
+R5k1/5ppp/8/8/8/8/5PPP/6K1 b - - 1 1; -; term-02
+7k/5Q2/6K1/8/8/8/8/8 b - - 0 1; -; term-03
+8/8/8/4k3/8/8/4P3/4K3 w - - 100 80; -; term-04
+8/8/8/4k3/8/8/8/4KB2 w - - 0 60; -; term-05

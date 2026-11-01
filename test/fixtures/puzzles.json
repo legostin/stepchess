@@ -1,0 +1,81 @@
+{
+    "note": "Positions composed or generated for these tests and checked with solveMate and the searcher; no external source. The Legall game is the classic one (Legall de Kermeur - Saint Brie, Paris 1750).",
+    "backRank": {
+        "fen": "2r3k1/5ppp/8/3Q4/8/8/5PPP/3R2K1 w - - 0 1",
+        "moves": ["d5d8", "c8d8", "d1d8"]
+    },
+    "fork": {
+        "fen": "2q3k1/5ppp/8/3N4/8/8/PPPP1PPP/6K1 w - - 0 1",
+        "moves": ["d5e7", "g8f8", "e7c8"]
+    },
+    "forkWithRook": {
+        "fen": "2q3k1/5ppp/8/3N4/8/8/5PPP/2R3K1 w - - 0 1",
+        "moves": ["d5e7", "g8h8", "e7c8"],
+        "alternative": "c1c8"
+    },
+    "mateIn3": {
+        "fen": "k7/p7/4R1p1/3K3p/1N6/8/8/8 w - - 0 1",
+        "key": "d5c6"
+    },
+    "lateAlternative": {
+        "fen": "k7/p7/4R1p1/3K3p/1N6/8/8/8 w - - 0 1",
+        "moves": ["d5c6", "a7a5", "c6b6", "a5a4", "e6e8"],
+        "ply": 2,
+        "alternative": "c6c7"
+    },
+    "weakReply": {
+        "fen": "k7/p7/4R1p1/3K3p/1N6/8/8/8 w - - 0 1",
+        "moves": ["d5c6", "g6g5", "e6e8"],
+        "ply": 1
+    },
+    "longerMate": {
+        "fen": "5k2/8/1K2P3/6R1/2p4p/p7/5B2/8 w - - 0 1",
+        "moves": ["f2c5", "f8e8", "g5g8"]
+    },
+    "cook": {
+        "fen": "k3N3/2Q5/4p3/8/8/8/K5p1/8 w - - 0 1",
+        "keys": ["c7b6", "e8d6"],
+        "puzzle": ["c7b6", "e6e5", "e8c7"]
+    },
+    "stalemateTrap": {
+        "fen": "k7/7Q/1K6/8/8/8/8/8 w - - 0 1",
+        "solutions": ["h7a7", "h7b7", "h7g8", "h7h8"],
+        "stalemate": "h7c7"
+    },
+    "game": {
+        "pgn": "[Event \"Casual game\"]\n[Site \"Paris FRA\"]\n[Date \"1750.??.??\"]\n[White \"Legall de Kermeur\"]\n[Black \"Saint Brie\"]\n[Result \"1-0\"]\n\n1. e4 e5 2. Nf3 d6 3. Bc4 Bg4 4. Nc3 g6 5. Nxe5 Bxd1 6. Bxf7+ Ke7 7. Nd5# 1-0\n",
+        "expected": {
+            "ply": 10,
+            "fen": "rn1qkbnr/ppp2p1p/3p2p1/4N3/2B1P3/2N5/PPPP1PPP/R1BbK2R w KQkq - 0 6",
+            "moves": ["c4f7", "e8e7", "c3d5"],
+            "themes": ["mate", "mateIn2"]
+        }
+    },
+    "forkGame": {
+        "pgn": "[SetUp \"1\"]\n[FEN \"3q2k1/5ppp/8/3N4/8/8/5PPP/5RK1 b - - 0 1\"]\n\n1... Qc8 2. Ne7+ Kh8 3. Nxc8 *\n",
+        "expected": {
+            "ply": 1,
+            "fen": "2q3k1/5ppp/8/3N4/8/8/5PPP/5RK1 w - - 1 2",
+            "moves": ["d5e7"],
+            "themes": ["fork"]
+        }
+    },
+    "cleanMate3": {
+        "fen": "8/8/8/1p1R1p2/8/8/p5K1/N3k3 w - - 0 1",
+        "moves": ["g2f3", "b5b4", "a1c2", "e1f1", "d5d1"]
+    },
+    "blackBackRank": {
+        "fen": "3r2k1/5ppp/8/8/3q4/8/5PPP/2R3K1 b - - 0 1",
+        "moves": ["d4d1", "c1d1", "d8d1"]
+    },
+    "blackFork": {
+        "fen": "6k1/5ppp/8/8/3n4/8/5PPP/2Q3K1 b - - 0 1",
+        "moves": ["d4e2", "g1f1", "e2c1"]
+    },
+    "lostSide": {
+        "fen": "6k1/5ppp/8/8/8/8/1B3PPP/R5K1 b - - 0 1",
+        "best": "f7f6",
+        "walksIntoMate": "g8h8",
+        "mate": "a1a8"
+    }
+}

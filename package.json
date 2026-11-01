@@ -1,0 +1,79 @@
+{
+    "name": "stepchess",
+    "version": "0.1.0",
+    "description": "A chess engine that explains itself: strong, dependency-free JavaScript that tells you why a move is good, in Russian and English.",
+    "type": "module",
+    "main": "./src/index.js",
+    "types": "./types/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./types/index.d.ts",
+            "default": "./src/index.js"
+        },
+        "./board": {
+            "types": "./board/index.d.ts",
+            "default": "./board/index.js"
+        },
+        "./worker": "./src/worker/worker.js"
+    },
+    "bin": {
+        "stepchess-uci": "bin/uci.js"
+    },
+    "files": [
+        "src",
+        "board",
+        "bin",
+        "data",
+        "types",
+        "docs",
+        "LICENSE",
+        "README.md"
+    ],
+    "scripts": {
+        "test": "node --test test/*.test.cjs",
+        "bench": "node bench/speed.mjs",
+        "speed": "node bench/speed.mjs",
+        "match": "node bench/match.mjs",
+        "datagen": "node scripts/datagen.mjs",
+        "tune": "node scripts/tune.mjs",
+        "lint": "eslint .",
+        "snapshot": "node bench/snapshot.mjs --verify bench/golden.json",
+        "snapshot:verify": "node bench/snapshot.mjs --verify bench/golden.json",
+        "snapshot:update": "node bench/snapshot.mjs --update bench/golden.json",
+        "format": "prettier --write --no-error-on-unmatched-pattern \"src/**/*.js\" \"board/**/*.js\" \"bin/**/*.js\" \"test/**/*.cjs\" \"bench/**/*.mjs\" \"scripts/**/*.mjs\" eslint.config.js",
+        "format:check": "prettier --check --no-error-on-unmatched-pattern \"src/**/*.js\" \"board/**/*.js\" \"bin/**/*.js\" \"test/**/*.cjs\" \"bench/**/*.mjs\" \"scripts/**/*.mjs\" eslint.config.js",
+        "types": "tsc -p tsconfig.types.json",
+        "types:check": "npm run types && tsc -p test/types/tsconfig.json",
+        "check": "npm run lint && npm run format:check && npm test && npm run types:check",
+        "prepare": "npm run types"
+    },
+    "engines": {
+        "node": ">=20"
+    },
+    "keywords": [
+        "chess",
+        "chess-engine",
+        "uci",
+        "explanations",
+        "education",
+        "russian"
+    ],
+    "author": "legostin (https://legost.in)",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/legostin/stepchess.git"
+    },
+    "homepage": "https://legost.in",
+    "sideEffects": [
+        "./board/*.js",
+        "./src/worker/*.js"
+    ],
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "eslint": "^10.11.0",
+        "globals": "^17.12.0",
+        "prettier": "^3.9.9",
+        "typescript": "^5.9.3"
+    }
+}

@@ -1,0 +1,516 @@
+<!doctype html>
+<!-- board/demo — every mode of the stepchess board elements on one page; open it from any static server. -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>stepchess/board</title>
+        <link rel="icon" href="data:," />
+        <meta name="color-scheme" content="light dark" />
+        <style>
+            :root {
+                --bg: #f5f2ec;
+                --card: #ffffff;
+                --fg: #221f1b;
+                --muted: #6c655b;
+                --line: #e4ddd0;
+                --accent: #2a7a52;
+                --chip: #efe9de;
+                color-scheme: light dark;
+            }
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --bg: #161513;
+                    --card: #1f1d1a;
+                    --fg: #ece6da;
+                    --muted: #a99f90;
+                    --line: #35312b;
+                    --accent: #6cc195;
+                    --chip: #2a2723;
+                }
+            }
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: var(--fg);
+                font:
+                    15px/1.55 system-ui,
+                    -apple-system,
+                    'Segoe UI',
+                    sans-serif;
+            }
+            header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                max-width: 1120px;
+                margin: 0 auto;
+                padding: 20px 16px 8px;
+            }
+            .brand {
+                font-weight: 800;
+                font-size: 20px;
+                letter-spacing: -0.01em;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .brand svg {
+                width: 34px;
+                height: 34px;
+            }
+            .brand small {
+                color: var(--muted);
+                font-weight: 600;
+            }
+            .brand > span:last-child {
+                white-space: nowrap;
+            }
+            @media (max-width: 360px) {
+                header {
+                    gap: 8px;
+                }
+                .brand {
+                    font-size: 17px;
+                    gap: 6px;
+                }
+                .brand svg {
+                    width: 28px;
+                    height: 28px;
+                }
+                .langs button {
+                    padding: 4px 10px;
+                }
+            }
+            .langs {
+                display: inline-flex;
+                border: 1px solid var(--line);
+                border-radius: 999px;
+                padding: 2px;
+                background: var(--card);
+            }
+            .langs button {
+                border: 0;
+                background: transparent;
+                color: var(--muted);
+                font: inherit;
+                font-weight: 700;
+                font-size: 13px;
+                padding: 4px 12px;
+                border-radius: 999px;
+                cursor: pointer;
+                min-height: 32px;
+            }
+            .langs button[aria-pressed='true'] {
+                background: var(--fg);
+                color: var(--bg);
+            }
+            .intro {
+                max-width: 1120px;
+                margin: 0 auto;
+                padding: 0 16px 8px;
+                color: var(--muted);
+            }
+            main {
+                max-width: 1120px;
+                margin: 0 auto;
+                padding: 8px 16px 48px;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            @media (min-width: 900px) {
+                main {
+                    grid-template-columns: 1fr 1fr;
+                    gap: 20px;
+                }
+            }
+            section.card {
+                background: var(--card);
+                border: 1px solid var(--line);
+                border-radius: 12px;
+                padding: 16px;
+                min-width: 0;
+            }
+            section.card > * {
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .card h2 {
+                margin: 0 auto 2px;
+                font-size: 17px;
+            }
+            .card .tag {
+                display: inline-block;
+                font:
+                    600 12px/1 ui-monospace,
+                    'SFMono-Regular',
+                    Consolas,
+                    monospace;
+                color: var(--muted);
+                background: var(--chip);
+                padding: 4px 6px;
+                border-radius: 4px;
+                margin-left: 6px;
+                vertical-align: 2px;
+            }
+            .card p.note {
+                margin: 0 auto 12px;
+                color: var(--muted);
+                font-size: 14px;
+            }
+            .with-bar {
+                display: flex;
+                gap: 8px;
+                align-items: stretch;
+            }
+            .with-bar stepchess-board {
+                flex: 1;
+                min-width: 0;
+            }
+            .controls {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-top: 12px;
+                align-items: center;
+            }
+            .controls button {
+                font: inherit;
+                font-size: 14px;
+                font-weight: 600;
+                color: var(--fg);
+                background: var(--chip);
+                border: 1px solid var(--line);
+                border-radius: 8px;
+                padding: 6px 12px;
+                min-height: 36px;
+                cursor: pointer;
+            }
+            .controls button:hover {
+                border-color: var(--accent);
+            }
+            .status {
+                font-size: 14px;
+                color: var(--muted);
+                min-height: 1.5em;
+            }
+            .status.good {
+                color: var(--accent);
+                font-weight: 700;
+            }
+            .status.bad {
+                color: #d63c32;
+                font-weight: 700;
+            }
+            .stack {
+                display: grid;
+                gap: 12px;
+                margin-top: 12px;
+            }
+            code.fen {
+                display: block;
+                font:
+                    12px/1.5 ui-monospace,
+                    'SFMono-Regular',
+                    Consolas,
+                    monospace;
+                background: var(--chip);
+                padding: 8px 10px;
+                border-radius: 6px;
+                overflow-wrap: anywhere;
+                margin-top: 10px;
+            }
+            .wide {
+                grid-column: 1 / -1;
+            }
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                border-radius: 8px;
+                overflow: hidden;
+                max-width: 720px;
+            }
+            .gallery div {
+                aspect-ratio: 1;
+                background: #eee5d3;
+            }
+            .gallery div:nth-child(12n + 2),
+            .gallery div:nth-child(12n + 4),
+            .gallery div:nth-child(12n + 6),
+            .gallery div:nth-child(12n + 7),
+            .gallery div:nth-child(12n + 9),
+            .gallery div:nth-child(12n + 11) {
+                background: #ad8a68;
+            }
+            .gallery svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+            footer {
+                text-align: center;
+                color: var(--muted);
+                font-size: 13px;
+                padding: 0 16px 32px;
+            }
+            footer a {
+                color: inherit;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="brand">
+                <span id="logo"></span><span>stepchess <small>/ board</small></span>
+            </div>
+            <div class="langs" role="group" aria-label="Language">
+                <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+                <button type="button" data-lang="en" aria-pressed="true">EN</button>
+            </div>
+        </header>
+        <p class="intro">
+            Dependency-free board elements: drag with a mouse or a finger, tap then tap, arrows with the right button or a long press, keyboard and screen
+            reader.
+        </p>
+        <main>
+            <section class="card" id="play-card">
+                <h2>Play<span class="tag">mode="play"</span></h2>
+                <p class="note">You play White; the demo opponent grabs the biggest capture or moves at random. The bar shows chances by material.</p>
+                <div class="with-bar">
+                    <stepchess-evalbar id="play-bar" win="0.5"></stepchess-evalbar>
+                    <stepchess-board id="play" mode="play" player="white"></stepchess-board>
+                </div>
+                <div class="controls">
+                    <button type="button" id="play-undo">Take back</button>
+                    <button type="button" id="play-flip">Flip</button>
+                    <button type="button" id="play-new">New game</button>
+                </div>
+                <div class="stack"><stepchess-moves for="play"></stepchess-moves></div>
+            </section>
+
+            <section class="card" id="puzzle-card">
+                <h2>Puzzle<span class="tag">mode="puzzle"</span></h2>
+                <p class="note">White to play and mate in two. The board plays the opponent's reply itself.</p>
+                <stepchess-board id="puzzle" mode="puzzle" fen="r5k1/5ppp/8/8/8/8/3R1PPP/3R2K1 w - - 0 1" puzzle="d2d8 a8d8 d1d8"></stepchess-board>
+                <div class="controls">
+                    <button type="button" id="puzzle-reset">Restart</button>
+                    <span class="status" id="puzzle-status" aria-hidden="true"></span>
+                </div>
+            </section>
+
+            <section class="card" id="analysis-card">
+                <h2>Analysis<span class="tag">mode="analysis"</span></h2>
+                <p class="note">Both sides move. The record with a variation winds the board; the explanation draws arrows step by step.</p>
+                <stepchess-board id="analysis" mode="analysis"></stepchess-board>
+                <div class="stack">
+                    <stepchess-explain id="explain" for="analysis"></stepchess-explain>
+                    <stepchess-moves
+                        id="analysis-moves"
+                        for="analysis"
+                        pgn="1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 (3... Nf6 4. Ng5 $5 d5) 4. c3 $1 Nf6 5. d4"
+                    ></stepchess-moves>
+                </div>
+            </section>
+
+            <section class="card" id="view-card">
+                <h2>Diagram<span class="tag">mode="view"</span></h2>
+                <p class="note">Display only: every kind of arrow, marked squares and move glyphs, seen from Black's side.</p>
+                <stepchess-board
+                    id="view"
+                    mode="view"
+                    orientation="black"
+                    fen="r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 w - - 1 7"
+                ></stepchess-board>
+            </section>
+
+            <section class="card" id="setup-card">
+                <h2>Set up<span class="tag">mode="setup"</span></h2>
+                <p class="note">Pick a piece in the palette and tap squares to place it; drag a piece on the board, or off it to remove it.</p>
+                <stepchess-board id="setup" mode="setup" fen="8/8/8/4k3/8/8/4P3/4K3 w - - 0 1"></stepchess-board>
+                <code class="fen" id="setup-fen"></code>
+            </section>
+
+            <section class="card" id="pieces-card">
+                <h2>Pieces<span class="tag">pieces.js</span></h2>
+                <p class="note">An original set: twelve SVGs colored by CSS custom properties.</p>
+                <div class="gallery" id="gallery"></div>
+            </section>
+        </main>
+        <footer>stepchess · MIT · <a href="https://legost.in">legost.in</a></footer>
+
+        <script type="module">
+            import { pieceSvg, PIECES } from './index.js';
+            import { msg, Position, legalMoves, moveToUci, moveTo } from '../src/index.js';
+
+            const $ = (id) => document.getElementById(id);
+            const elements = () => document.querySelectorAll('stepchess-board, stepchess-evalbar, stepchess-moves, stepchess-explain');
+
+            // language switch: the demo's own prose is English; every element (and the puzzle status) speaks the chosen
+            // language from the message catalogs
+            let lang = 'en';
+            const setLang = (next) => {
+                lang = next;
+                for (const b of document.querySelectorAll('[data-lang]')) b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+                for (const el of elements()) el.setAttribute('lang', lang);
+                puzzleStatus();
+            };
+            for (const b of document.querySelectorAll('[data-lang]')) b.addEventListener('click', () => setLang(b.dataset.lang));
+
+            $('logo').innerHTML = pieceSvg('N', 'width="34" height="34"');
+            $('gallery').innerHTML = PIECES.map((l) => `<div>${pieceSvg(l)}</div>`).join('');
+
+            // play: a material count for the bar, and a greedy random opponent
+            const VALUE = { p: 1, n: 3, b: 3, r: 5, q: 9, k: 0 };
+            const play = $('play');
+            const bar = $('play-bar');
+            const material = (fen) => {
+                let cp = 0;
+                for (const ch of fen.split(' ')[0]) if (/[pnbrqk]/i.test(ch)) cp += (ch === ch.toUpperCase() ? 1 : -1) * VALUE[ch.toLowerCase()] * 100;
+                return cp;
+            };
+            const updateBar = () => (bar.win = (1 / (1 + Math.exp(-0.00368208 * material(play.fen)))).toFixed(3));
+            let replyTimer = null;
+            play.addEventListener('move', (e) => {
+                updateBar();
+                if (e.detail.source !== 'user') return;
+                clearTimeout(replyTimer);
+                replyTimer = setTimeout(() => {
+                    const pos = Position.fromFen(play.fen);
+                    const moves = legalMoves(pos);
+                    if (!moves.length) return;
+                    const gain = (m) => VALUE['.pnbrqk'[pos.board[moveTo(m)] & 7]] ?? 0;
+                    moves.sort((a, b) => gain(b) - gain(a) || Math.random() - 0.5);
+                    const best = gain(moves[0]) > 0 ? moves[0] : moves[Math.floor(Math.random() * moves.length)];
+                    play.playMoves([moveToUci(best)]);
+                }, 450);
+            });
+            $('play-undo').addEventListener('click', () => {
+                clearTimeout(replyTimer);
+                play.undo();
+                if (play.state.turn === 'black') play.undo();
+                updateBar();
+            });
+            $('play-flip').addEventListener('click', () => play.flip());
+            $('play-new').addEventListener('click', () => {
+                clearTimeout(replyTimer);
+                play.setPosition(Position.START_FEN);
+                updateBar();
+            });
+
+            // puzzle status
+            const puzzle = $('puzzle');
+            const statusEl = $('puzzle-status');
+            let puzzleState = 'todo';
+            // the words come from the catalogs, in the language the switch has chosen
+            const STATUS = { todo: 'board.setup.white', solved: 'board.announce.solved', failed: 'board.announce.failed' };
+            function puzzleStatus() {
+                statusEl.textContent = msg(STATUS[puzzleState]).in(lang);
+                statusEl.className = `status ${puzzleState === 'solved' ? 'good' : puzzleState === 'failed' ? 'bad' : ''}`;
+            }
+            puzzle.addEventListener('puzzle-solved', () => ((puzzleState = 'solved'), puzzleStatus()));
+            puzzle.addEventListener('puzzle-failed', () => ((puzzleState = 'failed'), puzzleStatus()));
+            puzzle.addEventListener('move', (e) => e.detail.source === 'user' && puzzleState === 'failed' && ((puzzleState = 'todo'), puzzleStatus()));
+            $('puzzle-reset').addEventListener('click', () => {
+                puzzle.setPosition(puzzle.getAttribute('fen'), { puzzle: { moves: puzzle.getAttribute('puzzle').split(' ') } });
+                puzzleState = 'todo';
+                puzzleStatus();
+            });
+
+            // view: every kind of annotation
+            $('view').annotate({
+                arrows: [
+                    { from: 'f3', to: 'g5', kind: 'idea' },
+                    { from: 'c4', to: 'f7', kind: 'attack' },
+                    { from: 'c5', to: 'f2', kind: 'threat' },
+                    { from: 'd1', to: 'b3', kind: 'best' },
+                    { from: 'f6', to: 'e4', kind: 'bad' },
+                    { from: 'e8', to: 'f7', kind: 'defend' },
+                ],
+                squares: [
+                    { sq: 'f7', kind: 'threat' },
+                    { sq: 'd4', kind: 'idea' },
+                ],
+                badges: [
+                    { sq: 'b3', glyph: '!' },
+                    { sq: 'g5', glyph: '!?' },
+                    { sq: 'e4', glyph: '?' },
+                    { sq: 'f2', glyph: '?!' },
+                ],
+            });
+
+            // setup: the FEN as it is edited
+            const setup = $('setup');
+            const showFen = () => ($('setup-fen').textContent = setup.fen);
+            setup.addEventListener('change', showFen);
+            setup.addEventListener('move', showFen);
+
+            // analysis: the record goes to its end, then the explanation of 4. c3 is shown
+            const SAMPLE = {
+                ok: true,
+                kind: 'move',
+                class: 'best',
+                move: { uci: 'c2c3', san: 'c3' },
+                annotations: { arrows: [{ from: 'd2', to: 'd4', kind: 'best' }], squares: [], badges: [{ sq: 'c3', glyph: '!' }] },
+                steps: [
+                    {
+                        title: 'Prepares d4',
+                        text: 'The pawn on c3 supports d2–d4: White wants the centre with two pawns.',
+                        annotations: {
+                            arrows: [
+                                { from: 'd2', to: 'd4', kind: 'best' },
+                                { from: 'c3', to: 'd4', kind: 'defend' },
+                            ],
+                            squares: [{ sq: 'd4', kind: 'best' }],
+                            badges: [{ sq: 'c3', glyph: '!' }],
+                        },
+                        rule: 'center',
+                    },
+                    {
+                        title: 'The bishop on c5 will hit a wall',
+                        text: 'After d4 the bishop on c5 is attacked and must retreat, and White gains a tempo.',
+                        annotations: {
+                            arrows: [
+                                { from: 'd4', to: 'c5', kind: 'attack' },
+                                { from: 'c5', to: 'b6', kind: 'idea' },
+                            ],
+                            squares: [{ sq: 'c5', kind: 'threat' }],
+                            badges: [],
+                        },
+                        rule: 'tempo',
+                    },
+                    {
+                        title: 'The main line',
+                        line: ['d4', 'exd4', 'cxd4', 'Bb4+'],
+                        text: 'White gets a pawn centre.',
+                        annotations: {
+                            arrows: [{ from: 'c3', to: 'd4', kind: 'best' }],
+                            squares: [
+                                { sq: 'd4', kind: 'best' },
+                                { sq: 'e4', kind: 'best' },
+                            ],
+                            badges: [],
+                        },
+                        rule: 'line',
+                    },
+                ],
+            };
+            await Promise.all(['stepchess-board', 'stepchess-moves', 'stepchess-explain'].map((n) => customElements.whenDefined(n)));
+            await new Promise((r) => setTimeout(r, 0));
+            const analysisMoves = $('analysis-moves');
+            analysisMoves.first();
+            for (let i = 0; i < 6; i++) analysisMoves.next(); // after 3... Bc5: the position before 4. c3
+            $('explain').result = SAMPLE;
+
+            setLang(new URLSearchParams(location.search).get('lang') === 'ru' ? 'ru' : 'en');
+            updateBar();
+            showFen();
+            window.demoReady = true;
+        </script>
+    </body>
+</html>
