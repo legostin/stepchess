@@ -540,16 +540,16 @@ for (const sharedStop of [true, false]) {
     test(`client: an infinite analysis runs until stop() (${sharedStop ? 'shared flag' : 'respawn'})`, async () => {
         const engine = P.createEngine({ sharedStop });
         try {
-            let infos = 0;
-            const run = engine.analyze(START, { infinite: true, onInfo: () => infos++ });
-            // the 300,000-node default budget ends well inside this wait; an infinite search does not
-            await new Promise((r) => setTimeout(r, 2500));
+            // the 300,000-node default budget would end the search before it reports more than that; an infinite one goes on
+            let passed;
+            const beyond = new Promise((r) => (passed = r));
+            const run = engine.analyze(START, { infinite: true, onInfo: (info) => info.nodes > 350000 && passed() });
+            const ended = run.then(() => 'ended');
+            assert.equal(await Promise.race([beyond.then(() => 'beyond'), ended]), 'beyond');
             await engine.stop();
             const r = await run;
             assert.equal(r.kind, 'analysis');
             assert.equal(r.stopped, true);
-            assert.ok(r.nodes > 300000, String(r.nodes));
-            assert.ok(infos >= 1);
         } finally {
             engine.terminate();
         }
